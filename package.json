@@ -1,0 +1,19 @@
+{
+  "name": "archivista-ai-site",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Landing page for Archivista AI, an AI filing extension for Paperless-ngx.",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {}
+}
