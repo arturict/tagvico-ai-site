@@ -32,4 +32,10 @@ h2 { font-size: clamp(36px, 5vw, 64px); line-height:.95; letter-spacing:-.06em; 
 .step { border:1px solid rgba(247,242,232,.14); border-radius:8px; padding:18px; background:rgba(255,255,255,.04); display:flex; align-items:center; gap:16px; font-weight:800; }
 .step span { width:32px; height:32px; display:grid; place-items:center; border-radius:6px; background:#c8ff2e; color:#0d0f0b; }
 .model-strip { margin:60px 0 80px; padding:18px; border:1px solid rgba(247,242,232,.14); border-radius:10px; display:flex; flex-wrap:wrap; justify-content:space-around; gap:18px; color:#b6ad99; background:rgba(255,255,255,.03); }
+.footer-links { margin: -38px 0 64px; display:flex; flex-wrap:wrap; justify-content:center; gap:20px; color:#b6ad99; font-size:14px; }
+.legal { min-height: calc(100vh - 90px); padding:70px 0 90px; }
+.legal h1 { max-width:900px; }
+.legal-card { border:1px solid rgba(247,242,232,.14); border-radius:12px; background:rgba(255,255,255,.035); padding:28px; display:grid; gap:18px; max-width:860px; }
+.legal-card h2 { font-size:26px; margin:0; letter-spacing:-.04em; }
+.legal-card p { color:#c9c0aa; line-height:1.65; margin:0; }
 @media (max-width: 900px) { .hero, .setup { grid-template-columns:1fr; } .features { grid-template-columns:1fr; } .nav { align-items:flex-start; height:auto; padding:20px 0; flex-direction:column; } }
