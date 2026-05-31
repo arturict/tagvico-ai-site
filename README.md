@@ -17,8 +17,8 @@ npm run build
 
 ## Deployment
 
-This is a static Vite/React site. In Coolify:
+This is a static Vite/React site with a production Dockerfile for Coolify:
 
-- Build command: `npm install && npm run build`
-- Publish directory: `dist`
+- Build pack: `dockerfile`
+- Exposed port: `80`
 - Domain: `archivista.cloud.arturf.ch`
