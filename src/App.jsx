@@ -16,7 +16,7 @@ const steps = [
   'Connect Paperless-ngx',
   'Pick cloud or local AI',
   'Enable the metadata you want',
-  'Let Archivista file new documents',
+  'Let Tagvico file new documents',
 ];
 
 const comparisons = [
@@ -40,22 +40,22 @@ function App() {
   return (
     <main>
       <nav className="nav">
-        <div className="brand"><img src="/archivista-icon.png" alt="Archivista AI" /> Archivista</div>
+        <div className="brand"><img src="/tagvico-icon.png" alt="Tagvico AI" /> Tagvico</div>
         <div className="navlinks">
           <a href="#features">Features</a>
           <a href="#setup">Setup</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
-          <a href="https://github.com/arturict/archivista-ai">GitHub</a>
+          <a href="https://github.com/arturict/tagvico-ai">GitHub</a>
         </div>
       </nav>
 
       <section className="hero">
         <div className="hero-copy">
           <h1>Stop sorting documents by hand.</h1>
-          <p className="lead">Archivista AI is a ground-up AI extension for Paperless-ngx that reads incoming documents, writes useful metadata back, and assigns them to the right person with almost no setup.</p>
+          <p className="lead">Tagvico AI is a ground-up AI extension for Paperless-ngx that reads incoming documents, writes useful metadata back, and assigns them to the right person with almost no setup.</p>
           <div className="actions">
-            <a className="button primary" href="https://github.com/arturict/archivista-ai"><GitBranch size={18} /> View on GitHub</a>
+            <a className="button primary" href="https://github.com/arturict/tagvico-ai"><GitBranch size={18} /> View on GitHub</a>
             <a className="button" href="#setup"><Route size={18} /> See setup flow</a>
           </div>
         </div>
@@ -75,7 +75,7 @@ function App() {
         <div>
           <p className="kicker">Minimal setup</p>
           <h2>From zero to filed documents in minutes.</h2>
-          <p className="lead small">Archivista is intentionally opinionated: the app owns the filing prompt and exposes simple controls instead of making you become a prompt engineer.</p>
+          <p className="lead small">Tagvico is intentionally opinionated: the app owns the filing prompt and exposes simple controls instead of making you become a prompt engineer.</p>
         </div>
         <div className="steps">
           {steps.map((step, i) => <div className="step" key={step}><span>{i + 1}</span>{step}</div>)}
@@ -84,9 +84,9 @@ function App() {
 
       <section className="comparison">
         <div>
-          <p className="kicker">Why Archivista</p>
+          <p className="kicker">Why Tagvico</p>
           <h2>Built after Paperless GPT and Paperless AI, with current model workflows in mind.</h2>
-          <p className="lead small">Archivista keeps the useful idea of automatic Paperless filing, then modernizes the model layer, onboarding, owner matching, and day-to-day controls.</p>
+          <p className="lead small">Tagvico keeps the useful idea of automatic Paperless filing, then modernizes the model layer, onboarding, owner matching, and day-to-day controls.</p>
         </div>
         <div className="comparison-grid">
           {comparisons.map(([title, copy]) => <article className="feature compact" key={title}><h3>{title}</h3><p>{copy}</p></article>)}
@@ -100,7 +100,7 @@ function App() {
       <footer className="footer-links">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms of Service</a>
-        <a href="https://github.com/arturict/archivista-ai">GitHub</a>
+        <a href="https://github.com/arturict/tagvico-ai">GitHub</a>
       </footer>
     </main>
   );
@@ -111,7 +111,7 @@ function LegalPage({ type }) {
   return (
     <main>
       <nav className="nav">
-        <a className="brand" href="/"><img src="/archivista-icon.png" alt="Archivista AI" /> Archivista</a>
+        <a className="brand" href="/"><img src="/tagvico-icon.png" alt="Tagvico AI" /> Tagvico</a>
         <div className="navlinks">
           <a href="/">Home</a>
           <a href="/privacy">Privacy</a>
@@ -134,7 +134,7 @@ function PrivacyContent() {
   return (
     <div className="legal-card">
       <h2>Self-hosted by design</h2>
-      <p>Archivista AI is software you run yourself. This website does not process your documents, OCR text, Paperless data, or API keys.</p>
+      <p>Tagvico AI is software you run yourself. This website does not process your documents, OCR text, Paperless data, or API keys.</p>
       <h2>Data handled by the app</h2>
       <p>The app connects to your Paperless-ngx instance and your chosen AI provider. Document text and metadata may be sent to that provider when you enable processing.</p>
       <h2>API keys</h2>
@@ -149,7 +149,7 @@ function TermsContent() {
   return (
     <div className="legal-card">
       <h2>No managed service</h2>
-      <p>Archivista AI is provided as self-hosted software. The public website is informational and does not provide a hosted document-processing service.</p>
+      <p>Tagvico AI is provided as self-hosted software. The public website is informational and does not provide a hosted document-processing service.</p>
       <h2>Your responsibility</h2>
       <p>You are responsible for your deployment, credentials, backups, documents, provider selection, and compliance obligations.</p>
       <h2>No warranty</h2>

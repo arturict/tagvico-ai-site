@@ -1,8 +1,8 @@
 {
-  "name": "archivista-ai-site",
+  "name": "tagvico-ai-site",
   "version": "1.0.0",
   "private": false,
-  "description": "Landing page for Archivista AI, an AI filing extension for Paperless-ngx.",
+  "description": "Landing page for Tagvico AI, an AI filing extension for Paperless-ngx.",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",

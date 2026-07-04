@@ -1,6 +1,6 @@
-# Archivista AI Landing Page
+# Tagvico AI Landing Page
 
-Landing page for **Archivista AI**, a ground-up AI extension for Paperless-ngx.
+Landing page for **Tagvico AI**, a ground-up AI extension for Paperless-ngx.
 
 ## Development
 
@@ -21,4 +21,4 @@ This is a static Vite/React site with a production Dockerfile for Coolify:
 
 - Build pack: `dockerfile`
 - Exposed port: `80`
-- Domain: `archivista.cloud.arturf.ch`
+- Domain: `tagvico.cloud.arturf.ch`
