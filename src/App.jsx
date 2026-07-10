@@ -144,6 +144,7 @@ function App() {
           <span>Tagvico</span>
         </a>
         <div className="nav-center">
+          <a href="#product">Product</a>
           <a href="#workflow">Workflow</a>
           <a href="#providers">Providers</a>
           <a href="#reliability">Reliability</a>
@@ -211,6 +212,38 @@ function App() {
         <div className="field-list">
           {productFields.map((field) => <span key={field}>{field}</span>)}
         </div>
+      </section>
+
+      <section id="product" className="section product-section" aria-labelledby="product-title">
+        <div className="section-heading split-heading product-heading">
+          <div>
+            <p className="eyebrow">The actual product</p>
+            <h2 id="product-title">See every decision.<br /><em>Trust every write.</em></h2>
+          </div>
+          <p>These are real Tagvico v2 screens. The interface keeps throughput, model access, and filing vocabulary visible instead of hiding them in configuration files.</p>
+        </div>
+
+        <div className="product-showcase">
+          <figure className="product-shot product-shot-dashboard">
+            <div className="shot-toolbar"><span /><span /><span /><b>Operations overview</b></div>
+            <img src="/screenshots/dashboard.png" alt="Tagvico AI dashboard showing processing throughput and runner state" loading="lazy" />
+            <figcaption><strong>Know what happened.</strong><span>Live throughput, runner state, queues, and model-usage signals in one operational view.</span></figcaption>
+          </figure>
+
+          <div className="product-shot-stack">
+            <figure className="product-shot">
+              <div className="shot-toolbar"><span /><span /><span /><b>Subscription models</b></div>
+              <img src="/screenshots/chatgpt-models.png" alt="ChatGPT subscription model picker showing GPT-5.6 Luna" loading="lazy" />
+              <figcaption><strong>Bring the plan you already pay for.</strong><span>Device sign-in and a model list returned by the account itself.</span></figcaption>
+            </figure>
+            <figure className="product-shot">
+              <div className="shot-toolbar"><span /><span /><span /><b>Controlled vocabulary</b></div>
+              <img src="/screenshots/controlled-tagging.png" alt="Controlled Tag Groups in Tagvico AI" loading="lazy" />
+              <figcaption><strong>Constrain the taxonomy.</strong><span>Give models a useful vocabulary instead of cleaning up invented tags later.</span></figcaption>
+            </figure>
+          </div>
+        </div>
+        <p className="product-note"><ShieldCheck size={15} aria-hidden="true" /> Captured from a self-hosted v2 instance. Live document names were replaced for privacy.</p>
       </section>
 
       <section id="workflow" className="section workflow-section" aria-labelledby="workflow-title">
