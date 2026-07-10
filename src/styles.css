@@ -42,6 +42,8 @@ h1 em, h2 em { font-weight: 550; font-style: italic; color: #496757; letter-spac
 .button:hover { transform: translate(-2px, -2px); }
 .button-dark { color: #f7f6f0; border: 1px solid #17211e; background: #17211e; box-shadow: 4px 4px 0 #dfff37; }
 .button-dark:hover { background: #315444; box-shadow: 6px 6px 0 #dfff37; }
+.button-docs { color: #17211e; border: 1px solid #17211e; background: transparent; box-shadow: 4px 4px 0 #9cbb00; }
+.button-docs:hover { background: #f7f6f0; box-shadow: 6px 6px 0 #9cbb00; }
 .text-link { display: inline-flex; align-items: center; gap: 5px; color: #315444; font-size: 13px; font-weight: 800; border-bottom: 1px solid rgba(49, 84, 68, .28); padding-bottom: 3px; transition: color .18s ease, border-color .18s ease; }
 .text-link:hover { color: #ea6040; border-color: #ea6040; }
 .trust-row { display: flex; align-items: center; flex-wrap: wrap; gap: 13px 22px; margin-top: 35px; color: #5b6760; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .025em; }

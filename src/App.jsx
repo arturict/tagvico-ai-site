@@ -148,6 +148,7 @@ function App() {
           <a href="#workflow">Workflow</a>
           <a href="#providers">Providers</a>
           <a href="#reliability">Reliability</a>
+          <a href="/docs/">Docs</a>
         </div>
         <a className="nav-github" href="https://github.com/arturict/tagvico-ai">
           <GitBranch size={15} aria-hidden="true" /> <span>Source</span>
@@ -166,6 +167,9 @@ function App() {
           <div className="hero-actions">
             <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#quick-start">
               Run the alpha <ExternalArrow />
+            </a>
+            <a className="button button-docs" href="/docs/">
+              Read the docs <ChevronRight size={16} aria-hidden="true" />
             </a>
             <a className="text-link" href="#v2">What&apos;s new in v2 <ChevronRight size={16} aria-hidden="true" /></a>
           </div>
@@ -353,6 +357,7 @@ function App() {
         <div className="footer-links">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
+          <a href="/docs/">Docs</a>
           <a href="https://github.com/arturict/tagvico-ai">GitHub <ExternalArrow /></a>
         </div>
       </footer>
@@ -366,7 +371,7 @@ function LegalPage({ type }) {
     <main className="legal-main">
       <nav className="nav" aria-label="Legal navigation">
         <a className="brand" href="/" aria-label="Tagvico home"><img src="/tagvico-icon.png" alt="" /><span>Tagvico</span></a>
-        <div className="nav-center"><a href="/">Home</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+        <div className="nav-center"><a href="/">Home</a><a href="/docs/">Docs</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
         <a className="nav-github" href="https://github.com/arturict/tagvico-ai"><GitBranch size={15} aria-hidden="true" /><span>Source</span></a>
       </nav>
       <section className="legal-section">
@@ -378,7 +383,7 @@ function LegalPage({ type }) {
       <footer className="footer legal-footer">
         <a className="brand" href="/"><img src="/tagvico-icon.png" alt="" /><span>Tagvico</span></a>
         <p>Self-hosted AI filing for Paperless-ngx.</p>
-        <div className="footer-links"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="https://github.com/arturict/tagvico-ai">GitHub <ExternalArrow /></a></div>
+        <div className="footer-links"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/docs/">Docs</a><a href="https://github.com/arturict/tagvico-ai">GitHub <ExternalArrow /></a></div>
       </footer>
     </main>
   );
