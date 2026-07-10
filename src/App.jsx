@@ -50,7 +50,7 @@ const workflow = [
   {
     number: '04',
     title: 'Review the edge cases, automate the rest',
-    copy: 'Start in dry-run mode, inspect the proposed metadata diff, and send uncertain tags to review instead of letting a bad guess become archive truth.',
+    copy: 'Start in Review first mode, inspect the proposed metadata diff, and send uncertain tags to review instead of letting a bad guess become archive truth.',
     Icon: ClipboardCheck,
   },
 ];
@@ -63,7 +63,7 @@ const reliability = [
   },
   {
     title: 'A reversible write path',
-    copy: 'Dry runs show structured metadata changes before they land. Processing history, rescans, and restore actions make the automation inspectable.',
+    copy: 'Review first shows structured metadata changes before they land. Processing history, rescans, and restore actions make the automation inspectable.',
     Icon: RefreshCw,
   },
   {
@@ -77,8 +77,8 @@ const providers = [
   {
     label: 'Subscription-first',
     title: 'ChatGPT / Codex',
-    copy: 'Experimental device-code sign-in for one trusted, low-volume installation. The official Codex runtime owns the OAuth session and refresh flow.',
-    note: 'Experimental · private use',
+    copy: 'Experimental device-code sign-in for one trusted, low-volume installation. The live account catalog can include GPT-5.6 Luna, a cost-efficient fit for repetitive filing when available.',
+    note: 'GPT-5.6 Luna · subscription catalog',
     Icon: KeyRound,
     featured: true,
   },
@@ -107,7 +107,7 @@ const providers = [
     label: 'Bring your key',
     title: 'OpenAI / OpenRouter',
     copy: 'Use a direct API key, including OpenRouter’s rotating free-model router. Stable defaults favor smaller models for repetitive filing work.',
-    note: 'GPT-5.6 is gated preview access',
+    note: 'Live API catalog · provider pricing',
     Icon: Cloud,
   },
   {
@@ -120,7 +120,7 @@ const providers = [
 ];
 
 const releaseNotes = [
-  ['Provider clarity', 'A searchable provider and model picker makes the data boundary and setup choice explicit.'],
+  ['Subscription model catalog', 'Use account-visible models such as GPT-5.6 Luna through the experimental ChatGPT/Codex sign-in when available.'],
   ['Tag group workflow', 'Move from free-form tags to controlled vocabularies with a dedicated exception queue.'],
   ['Safer operations', 'Provider health, durable recovery queues, and reviewable writes make issues easier to see and correct.'],
   ['Better first run', 'A guided setup starts with Paperless, model choice, and the fields you actually want automated.'],
@@ -162,8 +162,8 @@ function App() {
             <span className="alpha-chip">Alpha</span>
           </div>
           <h1 id="hero-title">AI filing<br /><em>with a paper trail.</em></h1>
-          <p className="hero-lead">Tagvico is the self-hosted AI companion for Paperless-ngx. It turns incoming OCR text into clean metadata — without handing your archive to a black box.</p>
-          <p className="hero-detail">Run models locally, bring your own API key, or use the experimental ChatGPT/Codex device sign-in. Choose the boundary. Keep the filing rules.</p>
+          <p className="hero-lead">Still filing by hand, or ready to move beyond Paperless-AI? Tagvico v2 turns OCR text into reviewed titles, tags, correspondents, document types, and more — without replacing Paperless-ngx.</p>
+          <p className="hero-detail">Tag Groups keep the vocabulary coherent. Run models locally, bring your own API key, or use the experimental ChatGPT/Codex subscription sign-in with account-visible models such as GPT-5.6 Luna.</p>
           <div className="hero-actions">
             <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#quick-start">
               Run the alpha <ExternalArrow />
@@ -204,7 +204,7 @@ function App() {
               <div className="metadata-line"><span>type</span><b>invoice</b></div>
               <div className="review-note"><Sparkles size={15} aria-hidden="true" /> allowed by “Home” Tag Group</div>
             </div>
-            <div className="write-strip"><span>DRY RUN</span><b>Ready for review</b><ChevronRight size={17} aria-hidden="true" /></div>
+            <div className="write-strip"><span>REVIEW FIRST</span><b>Ready for review</b><ChevronRight size={17} aria-hidden="true" /></div>
           </div>
           <div className="corner-label bottom-label">REVIEW BEFORE WRITE</div>
           <div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" />
@@ -228,12 +228,6 @@ function App() {
         </div>
 
         <div className="product-showcase">
-          <figure className="product-shot product-shot-dashboard">
-            <div className="shot-toolbar"><span /><span /><span /><b>Operations overview</b></div>
-            <img src="/screenshots/dashboard.png" alt="Tagvico AI dashboard showing processing throughput and runner state" loading="lazy" />
-            <figcaption><strong>Know what happened.</strong><span>Live throughput, runner state, queues, and model-usage signals in one operational view.</span></figcaption>
-          </figure>
-
           <div className="product-shot-stack">
             <figure className="product-shot">
               <div className="shot-toolbar"><span /><span /><span /><b>Subscription models</b></div>
@@ -333,7 +327,7 @@ function App() {
         <div className="start-copy">
           <p className="eyebrow">Open source / alpha</p>
           <h2 id="start-title">Set up once.<br /><em>Keep filing.</em></h2>
-          <p className="section-copy">Run one Docker container next to Paperless-ngx, start with a dry run, and make the rules stricter as your archive grows.</p>
+          <p className="section-copy">Run one Docker container next to Paperless-ngx, start in Review first mode, and make the rules stricter as your archive grows.</p>
           <div className="hero-actions">
             <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#quick-start">Open quick start <ExternalArrow /></a>
             <a className="text-link" href="https://github.com/arturict/tagvico-ai/issues">Give alpha feedback <ExternalArrow /></a>
@@ -345,7 +339,7 @@ function App() {
             <li><span>01</span>Connect Paperless-ngx</li>
             <li><span>02</span>Choose an inference boundary</li>
             <li><span>03</span>Select fields and Tag Groups</li>
-            <li><span>04</span>Review a dry run</li>
+            <li><span>04</span>Review the first suggestion</li>
           </ol>
           <div className="checklist-footer"><Workflow size={18} aria-hidden="true" /> then let the scheduled scan do its work</div>
         </aside>
@@ -404,7 +398,7 @@ function TermsContent() {
   return (
     <div className="legal-card">
       <section><h2>No managed service</h2><p>Tagvico AI is self-hosted software. The public website is informational and does not provide a hosted document-processing service.</p></section>
-      <section><h2>Alpha software</h2><p>Tagvico is under active development. Back up your data volume, pin a release tag, and start with dry runs before trusting automatic writes in an important workflow.</p></section>
+      <section><h2>Alpha software</h2><p>Tagvico is under active development. Back up your data volume, pin a release tag, and start in Review first mode before trusting automatic writes in an important workflow.</p></section>
       <section><h2>Your responsibility</h2><p>You are responsible for your deployment, credentials, backups, documents, provider selection, and compliance obligations. AI output can be wrong and should be reviewed for important workflows.</p></section>
       <section><h2>Provider terms</h2><p>If you connect OpenAI, OpenRouter, Ollama, Anthropic, Azure OpenAI, Codex, or another endpoint, its own terms and privacy policies apply to that connection.</p></section>
     </div>
