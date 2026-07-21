@@ -12,16 +12,13 @@ import {
   FileText,
   GitBranch,
   KeyRound,
-  Layers3,
   LockKeyhole,
   Network,
-  RefreshCw,
   Route,
   ScanText,
   ShieldCheck,
   Sparkles,
   Tags,
-  TimerReset,
   Workflow,
 } from 'lucide-react';
 import './styles.css';
@@ -49,27 +46,27 @@ const workflow = [
   },
   {
     number: '04',
-    title: 'Review the edge cases, automate the rest',
-    copy: 'Start in dry-run mode, inspect the proposed metadata diff, and send uncertain tags to review instead of letting a bad guess become archive truth.',
+    title: 'Turn documents into accountable work',
+    copy: 'Keep uncertain metadata in review, or open an Action Case with an owner, priority, due date, and checklist. Every write remains explicit and traceable.',
     Icon: ClipboardCheck,
   },
 ];
 
 const reliability = [
   {
-    title: 'Controlled tagging',
-    copy: 'Tag Groups constrain suggestions to the taxonomy you define. Unknown suggestions can be held for review, then approved into the right group or rejected.',
-    Icon: Tags,
+    title: 'Action Cases, not loose reminders',
+    copy: 'Attach an owner, priority, due date, and up to 100 checklist steps to a Paperless document without replacing Paperless as the system of record.',
+    Icon: ClipboardCheck,
   },
   {
-    title: 'A reversible write path',
-    copy: 'Dry runs show structured metadata changes before they land. Processing history, rescans, and restore actions make the automation inspectable.',
-    Icon: RefreshCw,
+    title: 'Approval before automation',
+    copy: 'The Companion can read allowed documents and prepare proposals. Any tool that writes requires an explicit approval, with the decision kept in the audit trail.',
+    Icon: ShieldCheck,
   },
   {
-    title: 'Queues that do not forget',
-    copy: 'Retry and terminal-failure queues keep troublesome OCR or provider jobs visible instead of silently losing a document in the background.',
-    Icon: TimerReset,
+    title: 'Household access without shared tokens',
+    copy: 'Give each household member a role and an encrypted Paperless token. Permissions and Telegram actions stay tied to the person who performed them.',
+    Icon: LockKeyhole,
   },
 ];
 
@@ -107,7 +104,7 @@ const providers = [
     label: 'Bring your key',
     title: 'OpenAI / OpenRouter',
     copy: 'Use a direct API key, including OpenRouter’s rotating free-model router. Stable defaults favor smaller models for repetitive filing work.',
-    note: 'GPT-5.6 is gated preview access',
+    note: 'Model availability follows your provider account',
     Icon: Cloud,
   },
   {
@@ -120,10 +117,10 @@ const providers = [
 ];
 
 const releaseNotes = [
-  ['Provider clarity', 'A searchable provider and model picker makes the data boundary and setup choice explicit.'],
-  ['Tag group workflow', 'Move from free-form tags to controlled vocabularies with a dedicated exception queue.'],
-  ['Safer operations', 'Provider health, durable recovery queues, and reviewable writes make issues easier to see and correct.'],
-  ['Better first run', 'A guided setup starts with Paperless, model choice, and the fields you actually want automated.'],
+  ['Action Center', 'Create document-linked cases with owners, priorities, due dates, and checklists instead of losing follow-up work in tags.'],
+  ['Approval-gated Companion', 'Ask questions across permitted documents and turn answers into proposals; every Companion-proposed write waits for explicit approval.'],
+  ['Household identities', 'Use roles and encrypted member-specific Paperless tokens rather than sharing one all-powerful credential.'],
+  ['Paperless-native state', 'Mirror top-level case state to reserved Paperless fields while keeping detailed checklists local and auditable.'],
 ];
 
 function ExternalArrow() {
@@ -148,6 +145,7 @@ function App() {
           <a href="#workflow">Workflow</a>
           <a href="#providers">Providers</a>
           <a href="#reliability">Reliability</a>
+          <a href="/docs/">Docs</a>
         </div>
         <a className="nav-github" href="https://github.com/arturict/tagvico-ai">
           <GitBranch size={15} aria-hidden="true" /> <span>Source</span>
@@ -157,17 +155,17 @@ function App() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <div className="eyebrow-row">
-            <p className="eyebrow"><span className="pulse-dot" /> Tagvico v2</p>
-            <span className="alpha-chip">Alpha</span>
+            <p className="eyebrow"><span className="pulse-dot" /> Tagvico v3</p>
+            <span className="alpha-chip">Release</span>
           </div>
-          <h1 id="hero-title">AI filing<br /><em>with a paper trail.</em></h1>
-          <p className="hero-lead">Tagvico is the self-hosted AI companion for Paperless-ngx. It turns incoming OCR text into clean metadata — without handing your archive to a black box.</p>
-          <p className="hero-detail">Run models locally, bring your own API key, or use the experimental ChatGPT/Codex device sign-in. Choose the boundary. Keep the filing rules.</p>
+          <h1 id="hero-title">From archived document<br /><em>to finished action.</em></h1>
+          <p className="hero-lead">Tagvico is the self-hosted action and AI companion for Paperless-ngx. It keeps filing, follow-up work, and approvals beside the documents that created them.</p>
+          <p className="hero-detail">Classify incoming documents, assign accountable Action Cases, and use an approval-gated Companion—without replacing Paperless or surrendering control of your archive.</p>
           <div className="hero-actions">
-            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#quick-start">
-              Run the alpha <ExternalArrow />
+            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v300">
+              Install v3 <ExternalArrow />
             </a>
-            <a className="text-link" href="#v2">What&apos;s new in v2 <ChevronRight size={16} aria-hidden="true" /></a>
+            <a className="text-link" href="#v3">What&apos;s new in v3 <ChevronRight size={16} aria-hidden="true" /></a>
           </div>
           <div className="trust-row" aria-label="Project attributes">
             <span><ShieldCheck size={15} aria-hidden="true" /> Self-hosted</span>
@@ -220,21 +218,21 @@ function App() {
             <p className="eyebrow">The actual product</p>
             <h2 id="product-title">See every decision.<br /><em>Trust every write.</em></h2>
           </div>
-          <p>These are real Tagvico v2 screens. The interface keeps throughput, model access, and filing vocabulary visible instead of hiding them in configuration files.</p>
+          <p>These are real Tagvico v3 screens. Actions, Companion answers, and filing controls stay visible instead of disappearing into configuration files.</p>
         </div>
 
         <div className="product-showcase">
           <figure className="product-shot product-shot-dashboard">
-            <div className="shot-toolbar"><span /><span /><span /><b>Operations overview</b></div>
-            <img src="/screenshots/dashboard.png" alt="Tagvico AI dashboard showing processing throughput and runner state" loading="lazy" />
-            <figcaption><strong>Know what happened.</strong><span>Live throughput, runner state, queues, and model-usage signals in one operational view.</span></figcaption>
+            <div className="shot-toolbar"><span /><span /><span /><b>Action Center</b></div>
+            <img src="/screenshots/action-center-v3.png" alt="Tagvico v3 Action Center showing one synthetic renewal case, status, due date, steps, and priority" loading="lazy" />
+            <figcaption><strong>Finish what the document started.</strong><span>Owners, deadlines, priorities, and checklists stay attached to the source document.</span></figcaption>
           </figure>
 
           <div className="product-shot-stack">
             <figure className="product-shot">
-              <div className="shot-toolbar"><span /><span /><span /><b>Subscription models</b></div>
-              <img src="/screenshots/chatgpt-models.png" alt="ChatGPT subscription model picker showing GPT-5.6 Luna" loading="lazy" />
-              <figcaption><strong>Bring the plan you already pay for.</strong><span>Device sign-in and a model list returned by the account itself.</span></figcaption>
+              <div className="shot-toolbar"><span /><span /><span /><b>Household Companion</b></div>
+              <img src="/screenshots/companion-v3.png" alt="Tagvico v3 Companion answering a synthetic insurance deadline question beside the approval queue" loading="lazy" />
+              <figcaption><strong>Ask, then keep control.</strong><span>Document-grounded answers sit beside a durable approval queue for proposed writes.</span></figcaption>
             </figure>
             <figure className="product-shot">
               <div className="shot-toolbar"><span /><span /><span /><b>Controlled vocabulary</b></div>
@@ -243,7 +241,7 @@ function App() {
             </figure>
           </div>
         </div>
-        <p className="product-note"><ShieldCheck size={15} aria-hidden="true" /> Captured from a self-hosted v2 instance. Live document names were replaced for privacy.</p>
+        <p className="product-note"><ShieldCheck size={15} aria-hidden="true" /> Captured from the v3 release-acceptance instance using synthetic data only.</p>
       </section>
 
       <section id="workflow" className="section workflow-section" aria-labelledby="workflow-title">
@@ -271,8 +269,8 @@ function App() {
           <div className="paper-index">02 / RELIABLE BY DESIGN</div>
           <p className="eyebrow">No surprise taxonomy</p>
           <h2 id="reliability-title">A useful archive needs<br /><em>useful constraints.</em></h2>
-          <p className="section-copy">The hard part is not asking a model for tags. It is making sure those tags stay coherent after the hundredth document. Tagvico v2 puts the controls around the write, not just the prompt.</p>
-          <a className="text-link dark-link" href="https://github.com/arturict/tagvico-ai#why-tagvico-ai">Read how it works <ExternalArrow /></a>
+          <p className="section-copy">The hard part is not asking a model for an answer. It is preserving ownership, permissions, and a recoverable decision trail after the hundredth document. Tagvico v3 puts controls around every write, not just the prompt.</p>
+          <a className="text-link dark-link" href="https://github.com/arturict/tagvico-ai#why-tagvico">Read how it works <ExternalArrow /></a>
         </div>
         <div className="reliability-grid">
           {reliability.map(({ title, copy, Icon }, index) => (
@@ -307,15 +305,15 @@ function App() {
             </article>
           ))}
         </div>
-        <p className="provider-footnote"><LockKeyhole size={15} aria-hidden="true" /> Hosted providers receive the document content needed for classification. Local endpoints keep it on infrastructure you control. Check each provider’s own terms before connecting sensitive records.</p>
+        <p className="provider-footnote"><LockKeyhole size={15} aria-hidden="true" /> Hosted providers receive the document content needed for classification and, when used, Companion questions plus relevant action context. Local endpoints keep inference on infrastructure you control. Check each provider’s own terms before connecting sensitive records.</p>
       </section>
 
-      <section id="v2" className="section v2-section" aria-labelledby="v2-title">
-        <div className="release-stamp"><span>TAGVICO</span><b>V2</b><i>ALPHA</i></div>
+      <section id="v3" className="section v2-section" aria-labelledby="v3-title">
+        <div className="release-stamp"><span>TAGVICO</span><b>V3</b><i>RELEASE</i></div>
         <div className="v2-content">
-          <p className="eyebrow">The v2 direction</p>
-          <h2 id="v2-title">Less prompt theatre.<br /><em>More operational clarity.</em></h2>
-          <p className="section-copy">The v2 release brings the important filing decisions into the interface: which provider is in use, which vocabulary is allowed, what will change, and how to recover when a job fails.</p>
+          <p className="eyebrow">New in v3</p>
+          <h2 id="v3-title">Less AI theatre.<br /><em>More work completed.</em></h2>
+          <p className="section-copy">v3 extends trustworthy filing into the work that follows: accountable cases, household-safe access, document-grounded assistance, and approval gates that keep people in control.</p>
           <div className="release-grid">
             {releaseNotes.map(([title, copy]) => <article key={title}><h3>{title}</h3><p>{copy}</p></article>)}
           </div>
@@ -327,12 +325,12 @@ function App() {
 
       <section className="section start-section" aria-labelledby="start-title">
         <div className="start-copy">
-          <p className="eyebrow">Open source / alpha</p>
-          <h2 id="start-title">Set up once.<br /><em>Keep filing.</em></h2>
-          <p className="section-copy">Run one Docker container next to Paperless-ngx, start with a dry run, and make the rules stricter as your archive grows.</p>
+          <p className="eyebrow">Open source / self-hosted</p>
+          <h2 id="start-title">Set up once.<br /><em>Finish what arrives.</em></h2>
+          <p className="section-copy">Run Tagvico next to Paperless-ngx, start with dry-run classification, then add Action Cases and the Companion when your household is ready.</p>
           <div className="hero-actions">
-            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#quick-start">Open quick start <ExternalArrow /></a>
-            <a className="text-link" href="https://github.com/arturict/tagvico-ai/issues">Give alpha feedback <ExternalArrow /></a>
+            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v300">Open quick start <ExternalArrow /></a>
+            <a className="text-link" href="https://github.com/arturict/tagvico-ai/issues">Report an issue <ExternalArrow /></a>
           </div>
         </div>
         <aside className="start-checklist">
@@ -341,18 +339,19 @@ function App() {
             <li><span>01</span>Connect Paperless-ngx</li>
             <li><span>02</span>Choose an inference boundary</li>
             <li><span>03</span>Select fields and Tag Groups</li>
-            <li><span>04</span>Review a dry run</li>
+            <li><span>04</span>Review a dry run and first Action Case</li>
           </ol>
-          <div className="checklist-footer"><Workflow size={18} aria-hidden="true" /> then let the scheduled scan do its work</div>
+          <div className="checklist-footer"><Workflow size={18} aria-hidden="true" /> then keep every follow-up attached to its source</div>
         </aside>
       </section>
 
       <footer className="footer">
         <a className="brand" href="/"><img src="/tagvico-icon.png" alt="" /> <span>Tagvico</span></a>
-        <p>Self-hosted AI filing for Paperless-ngx.</p>
+        <p>Self-hosted action center for Paperless-ngx.</p>
         <div className="footer-links">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
+          <a href="/docs/">Docs</a>
           <a href="https://github.com/arturict/tagvico-ai">GitHub <ExternalArrow /></a>
         </div>
       </footer>
@@ -372,12 +371,12 @@ function LegalPage({ type }) {
       <section className="legal-section">
         <p className="eyebrow">{isPrivacy ? 'Privacy policy' : 'Terms of service'}</p>
         <h1>{isPrivacy ? 'Your documents stay yours.' : 'The short, human version.'}</h1>
-        <p className="legal-updated">Last updated: July 9, 2026</p>
+        <p className="legal-updated">Last updated: July 22, 2026</p>
         {isPrivacy ? <PrivacyContent /> : <TermsContent />}
       </section>
       <footer className="footer legal-footer">
         <a className="brand" href="/"><img src="/tagvico-icon.png" alt="" /><span>Tagvico</span></a>
-        <p>Self-hosted AI filing for Paperless-ngx.</p>
+        <p>Self-hosted action center for Paperless-ngx.</p>
         <div className="footer-links"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="https://github.com/arturict/tagvico-ai">GitHub <ExternalArrow /></a></div>
       </footer>
     </main>
@@ -388,7 +387,7 @@ function PrivacyContent() {
   return (
     <div className="legal-card">
       <section><h2>Self-hosted by design</h2><p>Tagvico AI is software you run yourself. This website does not process your documents, OCR text, Paperless data, or provider credentials.</p></section>
-      <section><h2>What the app connects to</h2><p>The app connects to your Paperless-ngx instance and the AI provider you choose. When processing is enabled, the OCR text and metadata needed to classify a document may be sent to that provider. A local endpoint such as Ollama can keep that processing inside infrastructure you control.</p></section>
+      <section><h2>What the app connects to</h2><p>The app connects to your Paperless-ngx instance and the AI provider you choose. When processing is enabled, the OCR text and metadata needed to classify a document may be sent to that provider. When you use Companion, your question and the permitted document or action context needed to answer it may also be sent. A local endpoint such as Ollama can keep inference inside infrastructure you control.</p></section>
       <section><h2>ChatGPT / Codex sign-in</h2><p>The experimental Codex provider starts an official device-code login. The Codex runtime manages its authentication session and refresh flow; Tagvico does not expose credential values in the browser.</p></section>
       <section><h2>Credentials and website analytics</h2><p>App settings are stored in your own deployment configuration. Protect the deployment with authentication and transport security. This landing page currently has no analytics, tracking pixels, newsletter forms, or advertising cookies.</p></section>
     </div>
@@ -399,7 +398,7 @@ function TermsContent() {
   return (
     <div className="legal-card">
       <section><h2>No managed service</h2><p>Tagvico AI is self-hosted software. The public website is informational and does not provide a hosted document-processing service.</p></section>
-      <section><h2>Alpha software</h2><p>Tagvico is under active development. Back up your data volume, pin a release tag, and start with dry runs before trusting automatic writes in an important workflow.</p></section>
+      <section><h2>Self-hosted software</h2><p>Tagvico is under active development. Back up your data volume, pin a release tag, and start with dry runs before trusting automatic writes in an important workflow.</p></section>
       <section><h2>Your responsibility</h2><p>You are responsible for your deployment, credentials, backups, documents, provider selection, and compliance obligations. AI output can be wrong and should be reviewed for important workflows.</p></section>
       <section><h2>Provider terms</h2><p>If you connect OpenAI, OpenRouter, Ollama, Anthropic, Azure OpenAI, Codex, or another endpoint, its own terms and privacy policies apply to that connection.</p></section>
     </div>
