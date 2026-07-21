@@ -21,4 +21,4 @@ This is a static Vite/React site with a production Dockerfile for Coolify:
 
 - Build pack: `dockerfile`
 - Exposed port: `80`
-- Domain: `tagvico.cloud.arturf.ch`
+- Domain: `tagvico.arturf.ch`
