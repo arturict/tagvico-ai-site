@@ -9,6 +9,7 @@
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
+    "@ridemountainpig/svgl-react": "^1.0.17",
     "@vitejs/plugin-react": "latest",
     "lucide-react": "latest",
     "react": "latest",
