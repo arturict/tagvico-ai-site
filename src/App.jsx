@@ -109,18 +109,18 @@ const providers = [
   },
   {
     label: 'Bring your endpoint',
-    title: 'More hosted or compatible',
-    copy: 'Connect Anthropic, Azure OpenAI, LM Studio, LiteLLM, vLLM, llama.cpp, or another Chat Completions-compatible endpoint.',
-    note: 'Provider-specific terms apply',
+    title: 'CLI proxy / compatible',
+    copy: 'Connect LM Studio, LiteLLM, vLLM, llama.cpp, a subscription CLI proxy, or another OpenAI-compatible chat endpoint.',
+    note: 'Manual endpoint · live catalog when supported',
     Icon: Route,
   },
 ];
 
 const releaseNotes = [
-  ['Action Center', 'Create document-linked cases with owners, priorities, due dates, and checklists instead of losing follow-up work in tags.'],
-  ['Approval-gated Companion', 'Ask questions across permitted documents and turn answers into proposals; every Companion-proposed write waits for explicit approval.'],
-  ['Household identities', 'Use roles and encrypted member-specific Paperless tokens rather than sharing one all-powerful credential.'],
-  ['Paperless-native state', 'Mirror top-level case state to reserved Paperless fields while keeping detailed checklists local and auditable.'],
+  ['Ask Tagvico that shows its work', 'Keep multiple chats, choose any configured chat model, and inspect privacy-safe Paperless research activity before trusting an answer.'],
+  ['Automation you can understand', 'Trigger tags are optional, manual scans show exact outcomes, and four precise tags remain the default ceiling.'],
+  ['Provider setup in one place', 'Configure keys, authenticate ChatGPT or GitHub Copilot, test connections, and browse each live model catalog from Settings.'],
+  ['Recovery without lost history', 'Rescan, restore, validate history, recover failed documents, and keep permanent ignores explicit and reversible.'],
 ];
 
 function ExternalArrow() {
@@ -155,15 +155,15 @@ function App() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <div className="eyebrow-row">
-            <p className="eyebrow"><span className="pulse-dot" /> Tagvico v3</p>
-            <span className="alpha-chip">Release</span>
+            <p className="eyebrow"><span className="pulse-dot" /> Tagvico v3.1</p>
+            <span className="alpha-chip">3.1.1</span>
           </div>
           <h1 id="hero-title">From archived document<br /><em>to finished action.</em></h1>
           <p className="hero-lead">Tagvico is the self-hosted action and AI companion for Paperless-ngx. It keeps filing, follow-up work, and approvals beside the documents that created them.</p>
           <p className="hero-detail">Classify incoming documents, assign accountable Action Cases, and use an approval-gated Companion—without replacing Paperless or surrendering control of your archive.</p>
           <div className="hero-actions">
-            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v300">
-              Install v3 <ExternalArrow />
+            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v311">
+              Install v3.1.1 <ExternalArrow />
             </a>
             <a className="text-link" href="#v3">What&apos;s new in v3 <ChevronRight size={16} aria-hidden="true" /></a>
           </div>
@@ -309,9 +309,9 @@ function App() {
       </section>
 
       <section id="v3" className="section v2-section" aria-labelledby="v3-title">
-        <div className="release-stamp"><span>TAGVICO</span><b>V3</b><i>RELEASE</i></div>
+        <div className="release-stamp"><span>TAGVICO</span><b>3.1</b><i>RELEASE</i></div>
         <div className="v2-content">
-          <p className="eyebrow">New in v3</p>
+          <p className="eyebrow">New in v3.1.1</p>
           <h2 id="v3-title">Less AI theatre.<br /><em>More work completed.</em></h2>
           <p className="section-copy">v3 extends trustworthy filing into the work that follows: accountable cases, household-safe access, document-grounded assistance, and approval gates that keep people in control.</p>
           <div className="release-grid">
@@ -329,7 +329,7 @@ function App() {
           <h2 id="start-title">Set up once.<br /><em>Finish what arrives.</em></h2>
           <p className="section-copy">Run Tagvico next to Paperless-ngx, start with dry-run classification, then add Action Cases and the Companion when your household is ready.</p>
           <div className="hero-actions">
-            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v300">Open quick start <ExternalArrow /></a>
+            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v311">Open quick start <ExternalArrow /></a>
             <a className="text-link" href="https://github.com/arturict/tagvico-ai/issues">Report an issue <ExternalArrow /></a>
           </div>
         </div>
