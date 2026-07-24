@@ -7,11 +7,8 @@ import {
   CheckCircle2,
   ChevronRight,
   ClipboardCheck,
-  Cloud,
-  Database,
   FileText,
   GitBranch,
-  KeyRound,
   Layers3,
   LockKeyhole,
   Network,
@@ -24,6 +21,14 @@ import {
   TimerReset,
   Workflow,
 } from 'lucide-react';
+import {
+  CodexLight,
+  GitHubCopilotLight,
+  OllamaLight,
+  OpenAILight,
+  OpenCodeLight,
+  OpenRouterLight,
+} from '@ridemountainpig/svgl-react';
 import './styles.css';
 
 const productFields = ['Title', 'Tags', 'Correspondent', 'Document type', 'Date', 'Language', 'Custom fields', 'Owner'];
@@ -79,7 +84,7 @@ const providers = [
     title: 'OpenRouter',
     copy: 'Configure a write-only API key and choose from the live model catalog returned by your account.',
     note: 'Live catalog · Vercel AI SDK',
-    Icon: Cloud,
+    Icon: OpenRouterLight,
     featured: true,
   },
   {
@@ -87,21 +92,21 @@ const providers = [
     title: 'Ollama',
     copy: 'Use a local or remote Ollama endpoint, or configure Ollama Cloud as its own independent runtime.',
     note: 'Ollama · Ollama Cloud',
-    Icon: Database,
+    Icon: OllamaLight,
   },
   {
     label: 'Compatible API',
     title: 'OpenCode Go',
     copy: 'Use OpenCode Go through the shared OpenAI-compatible inference contract and its discovered model catalog.',
     note: 'Write-only key · live catalog',
-    Icon: KeyRound,
+    Icon: OpenCodeLight,
   },
   {
     label: 'Account sign-in',
     title: 'GitHub Copilot',
     copy: 'Authenticate through the official Copilot SDK and choose only models exposed by the signed-in plan.',
     note: 'Device authentication · official SDK',
-    Icon: GitBranch,
+    Icon: GitHubCopilotLight,
   },
   {
     label: 'Bring your endpoint',
@@ -115,21 +120,21 @@ const providers = [
     title: 'OpenAI',
     copy: 'Use the native OpenAI adapter with a write-only key, live account catalog, and model-specific capabilities.',
     note: 'Vercel AI SDK · live catalog',
-    Icon: Cloud,
+    Icon: OpenAILight,
   },
   {
     label: 'Account sign-in',
     title: 'ChatGPT subscription',
     copy: 'Use the official Codex runtime and choose from the model list and reasoning efforts returned by the signed-in account.',
     note: 'Device authentication · live account catalog',
-    Icon: KeyRound,
+    Icon: CodexLight,
   },
   {
     label: 'Hosted Ollama',
     title: 'Ollama Cloud',
     copy: 'Keep hosted Ollama credentials, discovery, and selection separate from your local Ollama runtime.',
     note: 'Independent runtime · write-only key',
-    Icon: Database,
+    Icon: OllamaLight,
   },
 ];
 
@@ -316,7 +321,9 @@ function App() {
         <div className="provider-grid">
           {providers.map(({ label, title, copy, note, Icon, featured }) => (
             <article className={`provider-card${featured ? ' provider-featured' : ''}`} key={title}>
-              <div className="provider-icon"><Icon size={22} strokeWidth={1.8} aria-hidden="true" /></div>
+              <div className={`provider-icon${Icon === Route ? ' provider-icon-generic' : ' provider-icon-brand'}`}>
+                <Icon width={22} height={22} size={22} strokeWidth={1.8} aria-hidden="true" />
+              </div>
               <p className="provider-label">{label}</p>
               <h3>{title}</h3>
               <p>{copy}</p>
