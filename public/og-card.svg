@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f0e9"/>
+  <circle cx="1100" cy="-10" r="280" fill="#dfff37"/>
+  <circle cx="113" cy="615" r="190" fill="#ea6040"/>
+  <path d="M0 488C236 414 398 471 598 426s391-134 602-83v287H0Z" fill="#315444"/>
+  <g transform="translate(72 66)">
+    <rect width="74" height="74" rx="17" fill="#17211e"/>
+    <path d="M20 25h34v6H20zm0 14h24v6H20zm0 14h29v6H20z" fill="#dfff37"/>
+  </g>
+  <text x="166" y="119" fill="#17211e" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Tagvico</text>
+  <text x="72" y="240" fill="#17211e" font-family="Georgia, serif" font-size="74" font-weight="700">Useful work from your</text>
+  <text x="72" y="323" fill="#315444" font-family="Georgia, serif" font-size="80" font-style="italic" font-weight="700">Paperless-ngx archive.</text>
+  <text x="72" y="382" fill="#58645e" font-family="Arial, Helvetica, sans-serif" font-size="27">Metadata automation · document research · actions · tag cleanup</text>
+  <g transform="translate(640 434)">
+    <rect width="484" height="132" rx="8" fill="#17211e"/>
+    <text x="28" y="39" fill="#afbeb5" font-family="Arial, Helvetica, sans-serif" font-size="17">REVIEW FIRST</text>
+    <rect x="28" y="61" width="120" height="34" rx="5" fill="#dfff37"/>
+    <text x="45" y="84" fill="#17211e" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">utilities</text>
+    <rect x="158" y="61" width="105" height="34" rx="5" fill="#315444"/>
+    <text x="178" y="84" fill="#f2f0e9" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">invoice</text>
+    <text x="286" y="83" fill="#dfff37" font-family="Arial, Helvetica, sans-serif" font-size="17">Ready for review →</text>
+  </g>
+</svg>

@@ -3,20 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tagvico v3.1.2 — Useful work from your Paperless archive</title>
-    <meta name="description" content="Tagvico is the self-hosted Action Center, Ask Tagvico workspace, and metadata automation layer for Paperless-ngx. Choose local inference, an API provider, ChatGPT subscription, or GitHub Copilot while keeping every write under your control." />
+    <title>Tagvico: Paperless-ngx automation, chat and tag cleanup</title>
+    <meta name="description" content="Self-host Tagvico beside Paperless-ngx to automate metadata, research documents, track actions and review every write with Ollama, APIs, ChatGPT or Copilot." />
+    <meta name="application-name" content="Tagvico" />
+    <meta name="author" content="Tagvico maintainers" />
+    <meta name="keywords" content="Paperless-ngx, document automation, self-hosted, Ollama, document management, automatic tagging, document chat" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <link rel="canonical" href="https://tagvico.arturf.ch/" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/tagvico-icon.png" />
-    <meta property="og:title" content="Tagvico v3.1.2 — Useful work from your Paperless archive" />
-    <meta property="og:description" content="Configure live provider models, automate precise metadata, ask grounded questions, and keep every write reviewable and recoverable." />
-    <meta property="og:image" content="https://tagvico.arturf.ch/tagvico-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:site_name" content="Tagvico" />
+    <meta property="og:title" content="Tagvico: Useful work from your Paperless-ngx archive" />
+    <meta property="og:description" content="Self-hosted metadata automation, document research, action tracking and controlled tag cleanup for Paperless-ngx." />
+    <meta property="og:image" content="https://tagvico.arturf.ch/og-card.png" />
+    <meta property="og:image:secure_url" content="https://tagvico.arturf.ch/og-card.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tagvico reviewing Paperless-ngx metadata in its green interface" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://tagvico.arturf.ch/" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tagvico: Useful work from your Paperless-ngx archive" />
+    <meta name="twitter:description" content="Self-hosted metadata automation, document research, action tracking and controlled tag cleanup." />
+    <meta name="twitter:image" content="https://tagvico.arturf.ch/og-card.png" />
+    <meta name="twitter:image:alt" content="Tagvico reviewing Paperless-ngx metadata in its green interface" />
     <meta name="theme-color" content="#f2f0e9" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://tagvico.arturf.ch/#website",
+            "url": "https://tagvico.arturf.ch/",
+            "name": "Tagvico",
+            "description": "Self-hosted document automation and research for Paperless-ngx",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://tagvico.arturf.ch/#software",
+            "name": "Tagvico",
+            "alternateName": "Tagvico AI",
+            "url": "https://tagvico.arturf.ch/",
+            "codeRepository": "https://github.com/arturict/tagvico-ai",
+            "downloadUrl": "https://github.com/arturict/tagvico-ai/releases",
+            "softwareVersion": "3.1.2",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Document management",
+            "operatingSystem": "Linux, Docker",
+            "isAccessibleForFree": true,
+            "license": "https://opensource.org/license/mit",
+            "description": "A self-hosted companion for Paperless-ngx that automates document metadata, researches archives, tracks actions and keeps writes reviewable.",
+            "featureList": [
+              "Automatic Paperless-ngx metadata",
+              "Persistent document research chats",
+              "Reviewable action and deadline tracking",
+              "Duplicate tag unification",
+              "Processing history and metadata restore",
+              "Ollama, API, ChatGPT and GitHub Copilot runtimes"
+            ],
+            "sameAs": [
+              "https://github.com/arturict/tagvico-ai"
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/App.jsx"></script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
