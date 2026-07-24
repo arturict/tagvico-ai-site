@@ -1,6 +1,7 @@
 # Tagvico AI Landing Page
 
-Landing page for **Tagvico AI**, a ground-up AI extension for Paperless-ngx.
+Landing page for **Tagvico AI v3.1.2**, the self-hosted Action Center,
+Ask Tagvico workspace, and metadata automation layer for Paperless-ngx.
 
 ## Development
 
