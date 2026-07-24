@@ -1,5 +1,4 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
 import {
   Archive,
   ArrowUpRight,
@@ -149,8 +148,8 @@ function ExternalArrow() {
   return <ArrowUpRight size={16} strokeWidth={2.25} aria-hidden="true" />;
 }
 
-function App() {
-  const page = window.location.pathname;
+export function App({ path = '/' }) {
+  const page = path.length > 1 ? path.replace(/\/+$/, '') : path;
 
   if (page === '/privacy') return <LegalPage type="privacy" />;
   if (page === '/terms') return <LegalPage type="terms" />;
@@ -430,5 +429,3 @@ function TermsContent() {
     </div>
   );
 }
-
-createRoot(document.getElementById('root')).render(<App />);
