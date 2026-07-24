@@ -156,14 +156,14 @@ function App() {
         <div className="hero-copy">
           <div className="eyebrow-row">
             <p className="eyebrow"><span className="pulse-dot" /> Tagvico v3.1</p>
-            <span className="alpha-chip">3.1.1</span>
+            <span className="alpha-chip">3.1.2</span>
           </div>
           <h1 id="hero-title">From archived document<br /><em>to finished action.</em></h1>
           <p className="hero-lead">Tagvico is the self-hosted action and AI companion for Paperless-ngx. It keeps filing, follow-up work, and approvals beside the documents that created them.</p>
           <p className="hero-detail">Classify incoming documents, assign accountable Action Cases, and use an approval-gated Companion—without replacing Paperless or surrendering control of your archive.</p>
           <div className="hero-actions">
-            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v311">
-              Install v3.1.1 <ExternalArrow />
+            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v312">
+              Install v3.1.2 <ExternalArrow />
             </a>
             <a className="text-link" href="#v3">What&apos;s new in v3 <ChevronRight size={16} aria-hidden="true" /></a>
           </div>
@@ -311,7 +311,7 @@ function App() {
       <section id="v3" className="section v2-section" aria-labelledby="v3-title">
         <div className="release-stamp"><span>TAGVICO</span><b>3.1</b><i>RELEASE</i></div>
         <div className="v2-content">
-          <p className="eyebrow">New in v3.1.1</p>
+          <p className="eyebrow">Current release · v3.1.2</p>
           <h2 id="v3-title">Less AI theatre.<br /><em>More work completed.</em></h2>
           <p className="section-copy">v3 extends trustworthy filing into the work that follows: accountable cases, household-safe access, document-grounded assistance, and approval gates that keep people in control.</p>
           <div className="release-grid">
@@ -329,7 +329,7 @@ function App() {
           <h2 id="start-title">Set up once.<br /><em>Finish what arrives.</em></h2>
           <p className="section-copy">Run Tagvico next to Paperless-ngx, start with dry-run classification, then add Action Cases and the Companion when your household is ready.</p>
           <div className="hero-actions">
-            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v311">Open quick start <ExternalArrow /></a>
+            <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#stable-quick-start-v312">Open quick start <ExternalArrow /></a>
             <a className="text-link" href="https://github.com/arturict/tagvico-ai/issues">Report an issue <ExternalArrow /></a>
           </div>
         </div>
