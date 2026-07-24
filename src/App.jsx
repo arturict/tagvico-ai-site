@@ -245,17 +245,17 @@ function App() {
           <div className="product-shot-stack">
             <figure className="product-shot">
               <div className="shot-toolbar"><span /><span /><span /><b>Action Center</b></div>
-              <img src="/screenshots/action-center-v3.png" alt="Tagvico v3.1.2 Action Center" loading="lazy" />
+              <img src="/screenshots/action-center-green-v3.png" alt="Tagvico v3.1.2 Action Center" loading="lazy" />
               <figcaption><strong>Turn documents into owned work.</strong><span>Actions, due dates, priorities, owners, and checklists stay connected to Paperless.</span></figcaption>
             </figure>
             <figure className="product-shot">
               <div className="shot-toolbar"><span /><span /><span /><b>Ask Tagvico</b></div>
-              <img src="/screenshots/companion-v3.png" alt="Tagvico v3.1.2 persistent Ask Tagvico workspace" loading="lazy" />
+              <img src="/screenshots/companion-green-v3.png" alt="Tagvico v3.1.2 persistent Ask Tagvico workspace" loading="lazy" />
               <figcaption><strong>Research without a black box.</strong><span>Persistent conversations, configured models, visible tool activity, and approval-first writes.</span></figcaption>
             </figure>
             <figure className="product-shot">
               <div className="shot-toolbar"><span /><span /><span /><b>AI models</b></div>
-              <img src="/screenshots/ai-models-v3.png" alt="Tagvico v3.1.2 AI model provider settings" loading="lazy" />
+              <img src="/screenshots/ai-models-green-v3.png" alt="Tagvico v3.1.2 AI model provider settings" loading="lazy" />
               <figcaption><strong>Configure every runtime once.</strong><span>Write-only credentials, live catalogs, connection probes, and account authentication.</span></figcaption>
             </figure>
           </div>
