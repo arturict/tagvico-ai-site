@@ -1,24 +1,17 @@
-# Tagvico AI Landing Page
+# Tagvico Landing Page
 
-Landing page for **Tagvico AI v3.1.2**, the self-hosted Action Center,
-Ask Tagvico workspace, and metadata automation layer for Paperless-ngx.
+Static Paper & Pine landing page for **Tagvico**, the self-hosted Paperless-ngx
+workspace.
 
 ## Development
 
 ```bash
-npm install
-npm run dev
+python -m http.server 4173 --directory public
 ```
 
-## Build
-
-```bash
-npm run build
-```
-
-The build prerenders the landing, privacy, and terms pages so crawlers receive
-the product content without executing JavaScript. It also copies the crawl
-files from `public/` into `dist/`.
+The production build uses the reviewed static landing page and prerenders the
+privacy and terms pages so crawlers receive their content without executing
+JavaScript. It also copies the crawl files from `public/` into `dist/`.
 
 ```bash
 npm run check:seo
@@ -29,8 +22,10 @@ the sitemap, robots policy, and crawlable HTML on important routes.
 
 ## Deployment
 
-This is a static Vite/React site with a production Dockerfile for Coolify:
+The production Dockerfile builds the complete static site and serves it with
+nginx:
 
 - Build pack: `dockerfile`
 - Exposed port: `80`
 - Domain: `tagvico.arturf.ch`
+- Health endpoint: `/health`
