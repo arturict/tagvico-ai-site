@@ -8,6 +8,7 @@ const terms = await readFile(resolve(root, 'dist/terms/index.html'), 'utf8');
 const robots = await readFile(resolve(root, 'dist/robots.txt'), 'utf8');
 const sitemap = await readFile(resolve(root, 'dist/sitemap.xml'), 'utf8');
 const ogImage = await readFile(resolve(root, 'dist/og-card.png'));
+const nginx = await readFile(resolve(root, 'nginx.conf'), 'utf8');
 
 assert(home.includes('<h1'), 'home page must contain a prerendered h1');
 assert(!home.includes('<div id="root"></div>'), 'home page must not ship an empty app root');
@@ -26,6 +27,8 @@ assert(await stat(resolve(root, 'dist/site.webmanifest')), 'web manifest is miss
 assert(ogImage.toString('ascii', 1, 4) === 'PNG', 'Open Graph card must be a PNG');
 assert(ogImage.readUInt32BE(16) === 1200, 'Open Graph card width must be 1200px');
 assert(ogImage.readUInt32BE(20) === 630, 'Open Graph card height must be 630px');
+assert(nginx.includes('location = /privacy {'), 'nginx must serve the canonical privacy route without a scheme-changing redirect');
+assert(nginx.includes('location = /terms {'), 'nginx must serve the canonical terms route without a scheme-changing redirect');
 
 console.log('SEO checks passed.');
 
