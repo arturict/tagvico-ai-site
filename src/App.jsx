@@ -139,7 +139,7 @@ const providers = [
 
 const releaseNotes = [
   ['One coherent application', 'Actions, Ask Tagvico, Automation, Activity, recovery, manual processing, setup, and Settings share the same green React shell.'],
-  ['Runtime model catalogs', 'Eight supported runtimes expose live models and per-model options; embedding-only entries are filtered from chat in v3.1.2.'],
+  ['Runtime model catalogs', 'Supported runtimes expose live models and per-model options; embedding-only entries are filtered from chat in v3.2.6.'],
   ['Useful automation defaults', 'Trigger tags are optional, four tags is the default ceiling, and manual scans report exact eligibility and outcomes.'],
   ['Recoverable by design', 'Persistent chat, visible tool activity, exact restore, bounded retries, and failed/ignored queues make problems understandable.'],
 ];
@@ -176,7 +176,7 @@ export function App({ path = '/' }) {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <div className="eyebrow-row">
-            <p className="eyebrow"><span className="pulse-dot" /> Tagvico v3.1.2</p>
+            <p className="eyebrow"><span className="pulse-dot" /> Tagvico v3.2.6</p>
             <span className="alpha-chip">Stable</span>
           </div>
           <h1 id="hero-title">Documents in.<br /><em>Useful work out.</em></h1>
@@ -184,12 +184,12 @@ export function App({ path = '/' }) {
           <p className="hero-detail">Use local Ollama, a hosted API, ChatGPT subscription, or GitHub Copilot. Models and reasoning options come from each configured runtime, while sensitive writes remain visible and under your control.</p>
           <div className="hero-actions">
             <a className="button button-dark" href="https://github.com/arturict/tagvico-ai#quick-start">
-              Install v3.1.2 <ExternalArrow />
+              Install v3.2.6 <ExternalArrow />
             </a>
             <a className="button button-docs" href="/docs/">
               Read the docs <ChevronRight size={16} aria-hidden="true" />
             </a>
-            <a className="text-link" href="#release">What&apos;s new in v3.1.2 <ChevronRight size={16} aria-hidden="true" /></a>
+            <a className="text-link" href="#release">What&apos;s new in v3.2.6 <ChevronRight size={16} aria-hidden="true" /></a>
           </div>
           <div className="trust-row" aria-label="Project attributes">
             <span><ShieldCheck size={15} aria-hidden="true" /> Self-hosted</span>
@@ -242,29 +242,29 @@ export function App({ path = '/' }) {
             <p className="eyebrow">The actual product</p>
             <h2 id="product-title">See every decision.<br /><em>Trust every write.</em></h2>
           </div>
-          <p>These are current v3.1.2 screens from a representative installation. They show the Action Center, persistent Ask Tagvico workspace, and the provider registry users actually configure.</p>
+          <p>These are current stable v3 screens from a representative installation. They show the Action Center, persistent Ask Tagvico workspace, and the provider registry users actually configure.</p>
         </div>
 
         <div className="product-showcase">
           <div className="product-shot-stack">
             <figure className="product-shot">
               <div className="shot-toolbar"><span /><span /><span /><b>Action Center</b></div>
-              <img src="/screenshots/action-center-green-v3.png" alt="Tagvico v3.1.2 Action Center" loading="lazy" />
+              <img src="/screenshots/action-center-green-v3.png" alt="Tagvico v3 Action Center" loading="lazy" />
               <figcaption><strong>Turn documents into owned work.</strong><span>Actions, due dates, priorities, owners, and checklists stay connected to Paperless.</span></figcaption>
             </figure>
             <figure className="product-shot">
               <div className="shot-toolbar"><span /><span /><span /><b>Ask Tagvico</b></div>
-              <img src="/screenshots/companion-green-v3.png" alt="Tagvico v3.1.2 persistent Ask Tagvico workspace" loading="lazy" />
+              <img src="/screenshots/companion-green-v3.png" alt="Tagvico v3 persistent Ask Tagvico workspace" loading="lazy" />
               <figcaption><strong>Research without a black box.</strong><span>Persistent conversations, configured models, visible tool activity, and approval-first writes.</span></figcaption>
             </figure>
             <figure className="product-shot">
               <div className="shot-toolbar"><span /><span /><span /><b>AI models</b></div>
-              <img src="/screenshots/ai-models-green-v3.png" alt="Tagvico v3.1.2 AI model provider settings" loading="lazy" />
+              <img src="/screenshots/ai-models-green-v3.png" alt="Tagvico v3 AI model provider settings" loading="lazy" />
               <figcaption><strong>Configure every runtime once.</strong><span>Write-only credentials, live catalogs, connection probes, and account authentication.</span></figcaption>
             </figure>
           </div>
         </div>
-        <p className="product-note"><ShieldCheck size={15} aria-hidden="true" /> Captured from the running v3.1.2 release installation. No document contents, credentials, endpoints, or account identifiers are shown.</p>
+        <p className="product-note"><ShieldCheck size={15} aria-hidden="true" /> Captured from a representative stable v3 installation. No document contents, credentials, endpoints, or account identifiers are shown.</p>
       </section>
 
       <section id="workflow" className="section workflow-section" aria-labelledby="workflow-title">
@@ -292,7 +292,7 @@ export function App({ path = '/' }) {
           <div className="paper-index">02 / RELIABLE BY DESIGN</div>
           <p className="eyebrow">No surprise taxonomy</p>
           <h2 id="reliability-title">A useful archive needs<br /><em>useful constraints.</em></h2>
-          <p className="section-copy">The hard part is not asking a model for tags. It is making sure those tags stay coherent after the hundredth document. Tagvico v3.1.2 puts controls around the write, not just the prompt.</p>
+          <p className="section-copy">The hard part is not asking a model for tags. It is making sure those tags stay coherent after the hundredth document. Tagvico v3.2.6 puts controls around the write, not just the prompt.</p>
           <a className="text-link dark-link" href="https://github.com/arturict/tagvico-ai#why-tagvico-ai">Read how it works <ExternalArrow /></a>
         </div>
         <div className="reliability-grid">
@@ -334,11 +334,11 @@ export function App({ path = '/' }) {
       </section>
 
       <section id="release" className="section v2-section" aria-labelledby="release-title">
-        <div className="release-stamp"><span>TAGVICO</span><b>3.1</b><i>STABLE</i></div>
+        <div className="release-stamp"><span>TAGVICO</span><b>3.2</b><i>STABLE</i></div>
         <div className="v2-content">
           <p className="eyebrow">Current stable release</p>
           <h2 id="release-title">Less prompt theatre.<br /><em>More operational clarity.</em></h2>
-          <p className="section-copy">v3.1.2 completes the green application shell, runtime-driven model choice, durable Ask Tagvico experience, safer automation defaults, and recovery workflows introduced across v3.1.</p>
+          <p className="section-copy">v3.2.6 keeps the stable green application shell while tightening local deployment defaults, preserving loopback setup, and connecting the optional aggregate telemetry path.</p>
           <div className="release-grid">
             {releaseNotes.map(([title, copy]) => <article key={title}><h3>{title}</h3><p>{copy}</p></article>)}
           </div>
@@ -396,7 +396,7 @@ function LegalPage({ type }) {
       <section className="legal-section">
         <p className="eyebrow">{isPrivacy ? 'Privacy policy' : 'Terms of service'}</p>
         <h1>{isPrivacy ? 'Your documents stay yours.' : 'The short, human version.'}</h1>
-        <p className="legal-updated">Last updated: July 24, 2026</p>
+        <p className="legal-updated">Last updated: July 30, 2026</p>
         {isPrivacy ? <PrivacyContent /> : <TermsContent />}
       </section>
       <footer className="footer legal-footer">
@@ -414,7 +414,7 @@ function PrivacyContent() {
       <section><h2>Self-hosted by design</h2><p>Tagvico AI is software you run yourself. This website does not process your documents, OCR text, Paperless data, or provider credentials.</p></section>
       <section><h2>What the app connects to</h2><p>The app connects to your Paperless-ngx instance and the AI provider you choose. When processing is enabled, the OCR text and metadata needed to classify a document may be sent to that provider. A local endpoint such as Ollama can keep that processing inside infrastructure you control.</p></section>
       <section><h2>ChatGPT / Codex sign-in</h2><p>The subscription adapter starts the official Codex device-code login. The Codex runtime manages its authentication session and refresh flow; Tagvico does not expose credential values in the browser.</p></section>
-      <section><h2>Credentials and website analytics</h2><p>App settings are stored in your own deployment configuration. Protect the deployment with authentication and transport security. This landing page currently has no analytics, tracking pixels, newsletter forms, or advertising cookies.</p></section>
+      <section><h2>Credentials and website analytics</h2><p>App settings are stored in your own deployment configuration. Protect the deployment with authentication and transport security. This landing page sends a first-party aggregate page-view request only when Global Privacy Control and Do Not Track are off. It uses no cookies, local storage, visitor identifiers, fingerprinting, newsletter forms, or advertising pixels.</p></section>
     </div>
   );
 }
