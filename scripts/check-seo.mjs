@@ -16,10 +16,13 @@ assert(home.includes('rel="canonical" href="https://tagvico.arturf.ch/"'), 'home
 assert(home.includes('property="og:image" content="https://tagvico.arturf.ch/og-card.png"'), 'Open Graph image is missing');
 assert(home.includes('type="application/ld+json"'), 'structured data is missing');
 assert(home.includes('"@type": "SoftwareApplication"'), 'software schema is missing');
+assert(home.includes('data-website-id="32125e56-263c-42ee-a556-a2f2867a9b94"'), 'Umami tracking is missing from the landing page');
 assert(privacy.includes('<h1'), 'privacy page must be prerendered');
+assert(!privacy.includes('32125e56-263c-42ee-a556-a2f2867a9b94'), 'Umami tracking must stay off the privacy page');
 assert(privacy.includes('rel="canonical" href="https://tagvico.arturf.ch/privacy"'), 'privacy canonical is incorrect');
 assert(privacy.includes('name="robots" content="noindex,follow"'), 'privacy page must be noindex');
 assert(terms.includes('rel="canonical" href="https://tagvico.arturf.ch/terms"'), 'terms canonical is incorrect');
+assert(!terms.includes('32125e56-263c-42ee-a556-a2f2867a9b94'), 'Umami tracking must stay off the terms page');
 assert(robots.includes('Sitemap: https://tagvico.arturf.ch/sitemap.xml'), 'robots.txt must declare the sitemap');
 assert(sitemap.includes('<loc>https://tagvico.arturf.ch/</loc>'), 'sitemap must include the landing page');
 assert(sitemap.includes('<loc>https://tagvico.arturf.ch/docs/</loc>'), 'sitemap must include documentation');
