@@ -16,7 +16,15 @@
     >
     <meta name="theme-color" content="#f5f2e8">
     <meta name="tagvico-metrics-endpoint" content="https://telemetry.tagvico.arturf.ch">
-    <script defer src="https://umami.arturf.ch/script.js" data-website-id="32125e56-263c-42ee-a556-a2f2867a9b94"></script>
+    <script
+      defer
+      src="https://umami.arturf.ch/script.js"
+      data-website-id="32125e56-263c-42ee-a556-a2f2867a9b94"
+      data-auto-track="false"
+      data-do-not-track="true"
+      data-domains="tagvico.arturf.ch"
+      data-exclude-hash="true"
+    ></script>
     <script defer src="/analytics.js"></script>
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://tagvico.arturf.ch/">
@@ -2002,17 +2010,17 @@
   <body>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href="#top" aria-label="Tagvico home">
+        <a class="brand" href="#top" aria-label="Tagvico home" data-analytics-action="home" data-analytics-location="header" data-analytics-target="top">
           <img class="brand-icon" src="favicon.ico" alt="">
           <span>Tagvico</span>
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#workflows">What it does</a>
-          <a href="#companion">Companion</a>
-          <a href="#tag-health">Tag health</a>
-          <a href="#trust">Trust</a>
-          <a class="nav-docs" href="/docs/">Docs</a>
-          <a class="nav-github" href="https://github.com/arturict/tagvico-ai">GitHub</a>
+          <a href="#workflows" data-analytics-action="workflows" data-analytics-location="header" data-analytics-target="workflows">What it does</a>
+          <a href="#companion" data-analytics-action="companion" data-analytics-location="header" data-analytics-target="companion">Companion</a>
+          <a href="#tag-health" data-analytics-action="tag-health" data-analytics-location="header" data-analytics-target="tag-health">Tag health</a>
+          <a href="#trust" data-analytics-action="trust" data-analytics-location="header" data-analytics-target="trust">Trust</a>
+          <a class="nav-docs" href="/docs/" data-analytics-action="docs-open" data-analytics-location="header" data-analytics-target="docs">Docs</a>
+          <a class="nav-github" href="https://github.com/arturict/tagvico-ai" data-analytics-action="github-open" data-analytics-location="header" data-analytics-target="github">GitHub</a>
         </nav>
       </div>
     </header>
@@ -2035,8 +2043,8 @@
               and keeps your tags clean while every sensitive change remains visible and under your control.
             </p>
             <div class="actions">
-              <a class="button primary" href="#workflows" data-analytics-action="explore-workflows">Explore the workflows <span aria-hidden="true">↓</span></a>
-              <a class="button" href="/docs/" data-analytics-action="docs-open" data-analytics-location="hero">Read the documentation</a>
+              <a class="button primary" href="#workflows" data-analytics-action="explore-workflows" data-analytics-location="hero" data-analytics-target="workflows">Explore the workflows <span aria-hidden="true">↓</span></a>
+              <a class="button" href="/docs/" data-analytics-action="docs-open" data-analytics-location="hero" data-analytics-target="docs">Read the documentation</a>
             </div>
           </div>
 
@@ -2404,7 +2412,7 @@
               </p>
               <span class="docs-path">http://your-tagvico-host:8080/docs/</span>
             </div>
-            <a class="button primary" href="/docs/" data-analytics-action="docs-open" data-analytics-location="documentation">Open documentation <span aria-hidden="true">→</span></a>
+            <a class="button primary" href="/docs/" data-analytics-action="docs-open" data-analytics-location="documentation" data-analytics-target="docs">Open documentation <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
@@ -2420,15 +2428,15 @@
               It uses the same persistent v3 data volume. Pin the immutable tag so upgrades stay deliberate and rollback remains simple.
             </p>
             <div class="actions" style="justify-content:flex-start">
-              <a class="button primary" href="/docs/installation" data-analytics-action="installation-open">Installation guide</a>
-              <a class="button" href="https://github.com/arturict/tagvico-ai/releases" data-analytics-action="releases-open">Release notes</a>
+              <a class="button primary" href="/docs/installation" data-analytics-action="installation-open" data-analytics-location="install" data-analytics-target="docs-installation">Installation guide</a>
+              <a class="button" href="https://github.com/arturict/tagvico-ai/releases" data-analytics-action="releases-open" data-analytics-location="install" data-analytics-target="github-releases">Release notes</a>
             </div>
           </div>
           <div>
             <div class="code-card">
               <div class="code-head">
                 <span>docker compose</span>
-                <button class="copy-button" type="button" data-copy="compose" data-analytics-action="compose-copy-attempt">Copy</button>
+                <button class="copy-button" type="button" data-copy="compose" data-analytics-action="compose-copy" data-analytics-location="install" data-analytics-target="clipboard">Copy</button>
               </div>
               <pre><code>services:
   tagvico-ai:
@@ -2459,10 +2467,10 @@ volumes:
       <div class="container">
         <span>Tagvico · Self-hosted intelligence for Paperless-ngx</span>
         <div class="footer-links">
-          <a href="/docs/">Documentation</a>
-          <a href="https://github.com/arturict/tagvico-ai">GitHub</a>
-          <a href="https://github.com/arturict/tagvico-ai/blob/main/PRIVACY_POLICY.md">Privacy</a>
-          <a href="https://github.com/arturict/tagvico-ai/blob/main/LICENSE">MIT License</a>
+          <a href="/docs/" data-analytics-action="docs-open" data-analytics-location="footer" data-analytics-target="docs">Documentation</a>
+          <a href="https://github.com/arturict/tagvico-ai" data-analytics-action="github-open" data-analytics-location="footer" data-analytics-target="github">GitHub</a>
+          <a href="https://github.com/arturict/tagvico-ai/blob/main/PRIVACY_POLICY.md" data-analytics-action="privacy-open" data-analytics-location="footer" data-analytics-target="privacy">Privacy</a>
+          <a href="https://github.com/arturict/tagvico-ai/blob/main/LICENSE" data-analytics-action="license-open" data-analytics-location="footer" data-analytics-target="license">MIT License</a>
         </div>
       </div>
     </footer>

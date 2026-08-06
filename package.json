@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/sync-static-home.mjs",
-    "check:seo": "npm run build && node scripts/check-seo.mjs",
+    "check:seo": "npm run build && node scripts/check-seo.mjs && node scripts/check-analytics.mjs",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
