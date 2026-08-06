@@ -14,7 +14,7 @@
 ## Primary links
 
 - Product: https://tagvico.arturf.ch/
-- Documentation: https://tagvico.arturf.ch/docs/
-- Installation: https://tagvico.arturf.ch/docs/installation
+- Documentation: https://github.com/arturict/tagvico-ai#readme
+- Installation: https://github.com/arturict/tagvico-ai#stable-quick-start-v326
 - Source: https://github.com/arturict/tagvico-ai
 - Releases: https://github.com/arturict/tagvico-ai/releases
