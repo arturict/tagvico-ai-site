@@ -55,11 +55,11 @@ assert(sitemap.includes('<loc>https://tagvico.arturf.ch/</loc>'), 'sitemap must 
 assert(sitemap.includes('<loc>https://tagvico.arturf.ch/docs/</loc>'), 'sitemap must include documentation');
 assert(llms.includes('Paperless-ngx document automation and research'), 'llms.txt must state the product category');
 assert(
-  llms.includes('- Source: https://github.com/arturict/tagvico-ai'),
+  llms.includes('- [Source](https://github.com/arturict/tagvico-ai)'),
   'llms.txt must link to the canonical source',
 );
 assert(
-  llms.includes('- Documentation: https://github.com/arturict/tagvico-ai#readme'),
+  llms.includes('- [Documentation](https://github.com/arturict/tagvico-ai#readme)'),
   'llms.txt documentation must not depend on the landing container docs redirect',
 );
 assert(await stat(resolve(root, 'dist/site.webmanifest')), 'web manifest is missing');
