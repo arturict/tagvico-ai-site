@@ -7,6 +7,7 @@ const privacy = await readFile(resolve(root, 'dist/privacy/index.html'), 'utf8')
 const terms = await readFile(resolve(root, 'dist/terms/index.html'), 'utf8');
 const robots = await readFile(resolve(root, 'dist/robots.txt'), 'utf8');
 const sitemap = await readFile(resolve(root, 'dist/sitemap.xml'), 'utf8');
+const llms = await readFile(resolve(root, 'dist/llms.txt'), 'utf8');
 const ogImage = await readFile(resolve(root, 'dist/og-card.png'));
 const nginx = await readFile(resolve(root, 'nginx.conf'), 'utf8');
 const analytics = await readFile(resolve(root, 'dist/analytics.js'), 'utf8');
@@ -46,8 +47,11 @@ assert(privacy.includes('name="robots" content="noindex,follow"'), 'privacy page
 assert(terms.includes('rel="canonical" href="https://tagvico.arturf.ch/terms"'), 'terms canonical is incorrect');
 assert(!terms.includes('32125e56-263c-42ee-a556-a2f2867a9b94'), 'Umami tracking must stay off the terms page');
 assert(robots.includes('Sitemap: https://tagvico.arturf.ch/sitemap.xml'), 'robots.txt must declare the sitemap');
+assert(robots.includes('User-agent: OAI-SearchBot'), 'robots.txt must explicitly allow OpenAI search discovery');
 assert(sitemap.includes('<loc>https://tagvico.arturf.ch/</loc>'), 'sitemap must include the landing page');
 assert(sitemap.includes('<loc>https://tagvico.arturf.ch/docs/</loc>'), 'sitemap must include documentation');
+assert(llms.includes('Paperless-ngx document automation and research'), 'llms.txt must state the product category');
+assert(llms.includes('https://github.com/arturict/tagvico-ai'), 'llms.txt must link to the canonical source');
 assert(await stat(resolve(root, 'dist/site.webmanifest')), 'web manifest is missing');
 assert(ogImage.toString('ascii', 1, 4) === 'PNG', 'Open Graph card must be a PNG');
 assert(ogImage.readUInt32BE(16) === 1200, 'Open Graph card width must be 1200px');

@@ -1,0 +1,20 @@
+# Tagvico
+
+> Tagvico is an open-source, self-hosted companion for Paperless-ngx that turns documents into reviewable metadata, archive research, actions, deadlines, and recoverable automation.
+
+## Product facts
+
+- Category: Paperless-ngx document automation and research
+- Deployment: self-hosted with Docker
+- License: MIT
+- Source of truth: Paperless-ngx remains the document archive
+- Write boundary: metadata and tag changes can be reviewed before they are applied
+- Model options: local Ollama, compatible APIs, ChatGPT subscription, and GitHub Copilot
+
+## Primary links
+
+- Product: https://tagvico.arturf.ch/
+- Documentation: https://tagvico.arturf.ch/docs/
+- Installation: https://tagvico.arturf.ch/docs/installation
+- Source: https://github.com/arturict/tagvico-ai
+- Releases: https://github.com/arturict/tagvico-ai/releases
