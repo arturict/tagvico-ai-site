@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#f5f2e8">
     <meta name="tagvico-metrics-endpoint" content="https://telemetry.tagvico.arturf.ch">
     <script defer src="https://umami.arturf.ch/script.js" data-website-id="32125e56-263c-42ee-a556-a2f2867a9b94"></script>
+    <script defer src="/analytics.js"></script>
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://tagvico.arturf.ch/">
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -2034,8 +2035,8 @@
               and keeps your tags clean while every sensitive change remains visible and under your control.
             </p>
             <div class="actions">
-              <a class="button primary" href="#workflows">Explore the workflows <span aria-hidden="true">↓</span></a>
-              <a class="button" href="/docs/">Read the documentation</a>
+              <a class="button primary" href="#workflows" data-analytics-action="explore-workflows">Explore the workflows <span aria-hidden="true">↓</span></a>
+              <a class="button" href="/docs/" data-analytics-action="docs-open" data-analytics-location="hero">Read the documentation</a>
             </div>
           </div>
 
@@ -2403,7 +2404,7 @@
               </p>
               <span class="docs-path">http://your-tagvico-host:8080/docs/</span>
             </div>
-            <a class="button primary" href="/docs/">Open documentation <span aria-hidden="true">→</span></a>
+            <a class="button primary" href="/docs/" data-analytics-action="docs-open" data-analytics-location="documentation">Open documentation <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
@@ -2419,15 +2420,15 @@
               It uses the same persistent v3 data volume. Pin the immutable tag so upgrades stay deliberate and rollback remains simple.
             </p>
             <div class="actions" style="justify-content:flex-start">
-              <a class="button primary" href="/docs/installation">Installation guide</a>
-              <a class="button" href="https://github.com/arturict/tagvico-ai/releases">Release notes</a>
+              <a class="button primary" href="/docs/installation" data-analytics-action="installation-open">Installation guide</a>
+              <a class="button" href="https://github.com/arturict/tagvico-ai/releases" data-analytics-action="releases-open">Release notes</a>
             </div>
           </div>
           <div>
             <div class="code-card">
               <div class="code-head">
                 <span>docker compose</span>
-                <button class="copy-button" type="button" data-copy="compose">Copy</button>
+                <button class="copy-button" type="button" data-copy="compose" data-analytics-action="compose-copy-attempt">Copy</button>
               </div>
               <pre><code>services:
   tagvico-ai:
@@ -2486,12 +2487,14 @@ volumes:
         button.addEventListener("click", async () => {
           try {
             await navigator.clipboard.writeText(composeSnippet);
+            window.dispatchEvent(new CustomEvent("tagvico:analytics", { detail: { name: "code-copy", data: { snippet: "docker-compose", result: "success" } } }));
             const original = button.textContent;
             button.textContent = "Copied";
             window.setTimeout(() => {
               button.textContent = original;
             }, 1500);
           } catch {
+            window.dispatchEvent(new CustomEvent("tagvico:analytics", { detail: { name: "code-copy", data: { snippet: "docker-compose", result: "failure" } } }));
             button.textContent = "Select and copy";
           }
         });

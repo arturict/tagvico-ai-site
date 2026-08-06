@@ -17,6 +17,7 @@ assert(home.includes('property="og:image" content="https://tagvico.arturf.ch/og-
 assert(home.includes('type="application/ld+json"'), 'structured data is missing');
 assert(home.includes('"@type": "SoftwareApplication"'), 'software schema is missing');
 assert(home.includes('data-website-id="32125e56-263c-42ee-a556-a2f2867a9b94"'), 'Umami tracking is missing from the landing page');
+assert(home.includes('src="/analytics.js"'), 'detailed Umami event tracking is missing from the landing page');
 assert(privacy.includes('<h1'), 'privacy page must be prerendered');
 assert(!privacy.includes('32125e56-263c-42ee-a556-a2f2867a9b94'), 'Umami tracking must stay off the privacy page');
 assert(privacy.includes('rel="canonical" href="https://tagvico.arturf.ch/privacy"'), 'privacy canonical is incorrect');
