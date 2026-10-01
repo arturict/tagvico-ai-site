@@ -1,20 +1,22 @@
 # Tagvico
 
-> Tagvico is an open-source, self-hosted companion for Paperless-ngx that turns documents into reviewable metadata, archive research, actions, deadlines, and recoverable automation.
+> Tagvico is an open-source, self-hosted companion for Paperless-ngx: chat across the archive with sources, approvals before any change, a Needs you list, household members, and review-first filing.
 
 ## Product facts
 
 - Category: Paperless-ngx document automation and research
-- Deployment: self-hosted with Docker
+- Version: 3.5
+- Deployment: self-hosted with Docker (image on GHCR)
 - License: MIT
 - Source of truth: Paperless-ngx remains the document archive
-- Write boundary: metadata and tag changes can be reviewed before they are applied
-- Model options: local Ollama, compatible APIs, ChatGPT subscription, and GitHub Copilot
+- Write boundary: the Companion's changes need approval from an owner or adult; metadata filing starts in review mode
+- Model options: ChatGPT plan (Sign in with ChatGPT), OpenAI, OpenRouter, local Ollama, and other compatible providers
+- Channels: Telegram and Discord
 
 ## Primary links
 
 - [Product](https://tagvico.arturf.ch/)
 - [Documentation](https://github.com/arturict/tagvico-ai#readme)
-- [Installation](https://github.com/arturict/tagvico-ai#stable-quick-start-v326)
+- [Installation](https://tagvico.arturf.ch/docs/installation)
 - [Source](https://github.com/arturict/tagvico-ai)
 - [Releases](https://github.com/arturict/tagvico-ai/releases)

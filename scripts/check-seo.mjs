@@ -69,6 +69,32 @@ assert(ogImage.readUInt32BE(20) === 630, 'Open Graph card height must be 630px')
 assert(nginx.includes('location = /privacy {'), 'nginx must serve the canonical privacy route without a scheme-changing redirect');
 assert(nginx.includes('location = /terms {'), 'nginx must serve the canonical terms route without a scheme-changing redirect');
 
+// Structure the redesign relies on.
+assert((home.match(/<h1[\s>]/g) || []).length === 1, 'home page needs exactly one h1');
+for (const tag of ['<header', '<nav', '<main', '<footer']) assert(home.includes(tag), `home page is missing a ${tag}> landmark`);
+for (const img of home.match(/<img\b[^>]*>/g) || []) {
+  assert(/\swidth="\d+"/.test(img) && /\sheight="\d+"/.test(img), `image without width and height: ${img.slice(0, 80)}`);
+  assert(/\salt="/.test(img), `image without alt text: ${img.slice(0, 80)}`);
+}
+assert(home.includes('ghcr.io/arturict/tagvico-ai:'), 'the quick start must show the GHCR image');
+assert(home.includes('data-analytics-action="compose-copy"'), 'the compose copy button must keep its analytics action');
+for (const match of home.matchAll(/data-analytics-(?:action|location|target)="([^"]*)"/g)) {
+  assert(/^[a-z0-9][a-z0-9-]{0,49}$/.test(match[1]), `analytics value would be dropped by analytics.js: ${match[1]}`);
+}
+for (const section of home.matchAll(/<section\b[^>]*\bid="([^"]*)"/g)) {
+  assert(/^[a-z0-9][a-z0-9-]{0,49}$/.test(section[1]), `section id would be dropped from section-view events: ${section[1]}`);
+}
+if (/<video\b/.test(home)) {
+  const video = home.match(/<video\b[^>]*>/)[0];
+  for (const attribute of ['controls', 'muted', 'playsinline']) assert(video.toLowerCase().includes(attribute), `video needs ${attribute}`);
+  assert(!/\bautoplay\b/.test(video), 'video must not autoplay');
+}
+assert(!/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(home), 'the page must not use emoji');
+assert(!home.includes('Paper &amp; Pine') && !home.includes('fonts.googleapis.com'), 'the old Paper & Pine design must be gone');
+const shots = JSON.parse(await readFile(resolve(root, 'src/shots.json'), 'utf8'));
+const placeholders = Object.entries(shots).filter(([, shot]) => shot.placeholder).map(([name]) => name);
+if (placeholders.length) console.warn(`Notice: placeholder screenshots still in use: ${placeholders.join(', ')}`);
+
 console.log('SEO checks passed.');
 
 function assert(condition, message) {

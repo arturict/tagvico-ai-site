@@ -1,11 +1,11 @@
 {
   "name": "Tagvico",
   "short_name": "Tagvico",
-  "description": "Self-hosted document automation and research for Paperless-ngx.",
+  "description": "A self-hosted companion for Paperless-ngx.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f2f0e9",
-  "theme_color": "#315444",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/tagvico-icon.png",

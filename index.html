@@ -1,36 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tagvico: Paperless-ngx automation, chat and tag cleanup</title>
-    <meta name="description" content="Self-host Tagvico beside Paperless-ngx to automate metadata, research documents, track actions and review every write with Ollama, APIs, ChatGPT or Copilot." />
+    <title>Tagvico: a companion for Paperless-ngx</title>
+    <meta name="description" content="A self-hosted companion for Paperless-ngx. Ask your archive questions, see what needs you and approve every change. Works with ChatGPT, OpenAI, OpenRouter or Ollama." />
     <meta name="application-name" content="Tagvico" />
     <meta name="author" content="Tagvico maintainers" />
-    <meta name="keywords" content="Paperless-ngx, document automation, self-hosted, Ollama, document management, automatic tagging, document chat" />
+    <meta name="keywords" content="Paperless-ngx, document chat, self-hosted, Ollama, document management, household, approvals" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#212121" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://tagvico.arturf.ch/" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/tagvico-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:site_name" content="Tagvico" />
-    <meta property="og:title" content="Tagvico: Useful work from your Paperless-ngx archive" />
-    <meta property="og:description" content="Self-hosted metadata automation, document research, action tracking and controlled tag cleanup for Paperless-ngx." />
+    <meta property="og:title" content="Tagvico: a companion for Paperless-ngx" />
+    <meta property="og:description" content="A self-hosted companion for Paperless-ngx. Ask your archive questions, see what needs you and approve every change." />
     <meta property="og:image" content="https://tagvico.arturf.ch/og-card.png" />
     <meta property="og:image:secure_url" content="https://tagvico.arturf.ch/og-card.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Tagvico reviewing Paperless-ngx metadata in its green interface" />
+    <meta property="og:image:alt" content="Tagvico, a self-hosted companion for Paperless-ngx" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://tagvico.arturf.ch/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tagvico: Useful work from your Paperless-ngx archive" />
-    <meta name="twitter:description" content="Self-hosted metadata automation, document research, action tracking and controlled tag cleanup." />
+    <meta name="twitter:title" content="Tagvico: a companion for Paperless-ngx" />
+    <meta name="twitter:description" content="A self-hosted companion for Paperless-ngx. Ask your archive questions, see what needs you and approve every change." />
     <meta name="twitter:image" content="https://tagvico.arturf.ch/og-card.png" />
-    <meta name="twitter:image:alt" content="Tagvico reviewing Paperless-ngx metadata in its green interface" />
-    <meta name="theme-color" content="#f2f0e9" />
+    <meta name="twitter:image:alt" content="Tagvico, a self-hosted companion for Paperless-ngx" />
+    <script>
+      (function () {
+        var query = window.matchMedia('(prefers-color-scheme: dark)');
+        var apply = function () { document.documentElement.dataset.theme = query.matches ? 'dark' : 'light'; };
+        apply();
+        if (query.addEventListener) query.addEventListener('change', apply);
+      })();
+    </script>
+    <!-- analytics:start -->
+    <script
+      defer
+      src="https://umami.arturf.ch/script.js"
+      data-website-id="32125e56-263c-42ee-a556-a2f2867a9b94"
+      data-auto-track="false"
+      data-do-not-track="true"
+      data-domains="tagvico.arturf.ch"
+      data-exclude-hash="true"
+    ></script>
+    <script defer src="/analytics.js"></script>
+    <!-- analytics:end -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -40,7 +62,7 @@
             "@id": "https://tagvico.arturf.ch/#website",
             "url": "https://tagvico.arturf.ch/",
             "name": "Tagvico",
-            "description": "Self-hosted document automation and research for Paperless-ngx",
+            "description": "A self-hosted companion for Paperless-ngx",
             "inLanguage": "en"
           },
           {
@@ -51,20 +73,21 @@
             "url": "https://tagvico.arturf.ch/",
             "codeRepository": "https://github.com/arturict/tagvico-ai",
             "downloadUrl": "https://github.com/arturict/tagvico-ai/releases",
-            "softwareVersion": "3.2.6",
+            "softwareVersion": "3.5.0",
             "applicationCategory": "BusinessApplication",
             "applicationSubCategory": "Document management",
             "operatingSystem": "Linux, Docker",
             "isAccessibleForFree": true,
             "license": "https://opensource.org/license/mit",
-            "description": "A self-hosted companion for Paperless-ngx that automates document metadata, researches archives, tracks actions and keeps writes reviewable.",
+            "description": "A self-hosted companion for Paperless-ngx: chat across the archive with sources, approvals before any change, a Needs you list, household members, and review-first filing.",
             "featureList": [
-              "Automatic Paperless-ngx metadata",
-              "Persistent document research chats",
-              "Reviewable action and deadline tracking",
-              "Duplicate tag unification",
-              "Processing history and metadata restore",
-              "Ollama, API, ChatGPT and GitHub Copilot runtimes"
+              "Chat across a Paperless-ngx archive with sources",
+              "Approvals before any change",
+              "Needs you list for deadlines, approvals and suggestions",
+              "Household members with per-person pages",
+              "Sign in with ChatGPT, OpenAI, OpenRouter or local Ollama",
+              "Telegram and Discord",
+              "Review-first filing of titles, tags, correspondents and dates"
             ],
             "sameAs": [
               "https://github.com/arturict/tagvico-ai"
