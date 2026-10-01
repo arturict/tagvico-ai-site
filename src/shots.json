@@ -1,0 +1,38 @@
+{
+  "chat": {
+    "width": 1600,
+    "height": 940
+  },
+  "roles": {
+    "width": 1540,
+    "height": 720
+  },
+  "needs-you": {
+    "width": 1520,
+    "height": 1180
+  },
+  "person": {
+    "width": 1520,
+    "height": 620
+  },
+  "models": {
+    "width": 1540,
+    "height": 790
+  },
+  "channels": {
+    "width": 1540,
+    "height": 1180
+  },
+  "filing": {
+    "width": 1540,
+    "height": 880
+  },
+  "chat-mobile": {
+    "width": 780,
+    "height": 1588
+  },
+  "needs-you-mobile": {
+    "width": 780,
+    "height": 1688
+  }
+}
