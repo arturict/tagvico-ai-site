@@ -13,7 +13,7 @@ export function Home() {
       <main id="main">
         <section id="hero" className="hero" aria-labelledby="hero-title">
           <div className="wrap">
-            <Mascot className="mascot-hero" size={120} />
+            <Mascot pose="waving" className="mascot-hero" size={96} />
             <h1 id="hero-title">
               <span>Ask your archive.</span> <span className="muted">Approve what changes.</span>
             </h1>
@@ -41,8 +41,8 @@ export function Home() {
                 playsInline
                 preload="none"
                 poster="/video/tagvico-3-5-poster.webp"
-                width="1600"
-                height="900"
+                width="1280"
+                height="720"
                 {...track('video-play', 'video', 'release-video')}
               >
                 <source src="/video/tagvico-3-5.mp4" type="video/mp4" />
@@ -52,14 +52,15 @@ export function Home() {
         )}
 
         <section id="companion" className="block" aria-labelledby="companion-title">
-          <div className="wrap statement">
-            <h2 id="companion-title">Ask across the whole archive.</h2>
-            <div className="statement-body">
+          <div className="wrap split">
+            <div className="split-text">
+              <h2 id="companion-title">Ask across the whole archive.</h2>
               <p>
                 Ask in plain language about letters, contracts and receipts. Each answer lists the Paperless documents
                 it is based on, so you can open the original.
               </p>
             </div>
+            <Shot name="answer" />
           </div>
         </section>
 
@@ -72,7 +73,7 @@ export function Home() {
                 rejects it, and only then is it applied. Every decision is kept in an audit trail.
               </p>
             </div>
-            <Shot name="roles" />
+            <Shot name="approval" />
           </div>
         </section>
 
@@ -207,7 +208,7 @@ export function Home() {
 
         <section id="start" className="block closing" aria-labelledby="start-title">
           <div className="wrap closing-inner">
-            <Mascot className="mascot-closing" size={96} />
+            <Mascot pose="idle" className="mascot-closing" size={96} />
             <h2 id="start-title">Run it next to Paperless-ngx.</h2>
             <div className="actions">
               <a className="button button-primary" href={links.install} {...track('installation-open', 'closing', 'docs-installation')}>

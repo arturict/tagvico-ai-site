@@ -1,6 +1,7 @@
 // Turns product screenshots into the responsive assets the landing page uses.
 //
-//   node scripts/optimize-shots.mjs --from /tmp/v36/demo-shots     # real screenshots
+//   node scripts/optimize-shots.mjs --from /tmp/v36/demo-shots \
+//        --stills ~/tagvico-video-out/stills                       # real screenshots
 //   node scripts/optimize-shots.mjs --placeholders                  # neutral stand-ins
 //
 // For each entry in SHOTS it reads <from>/<file>.png, crops it (pixels of the source,
@@ -16,7 +17,10 @@ import { resolve } from 'node:path';
 // keep demo-only details such as the test model name out of the frame.
 const SHOTS = {
   chat: { file: 'desktop-chat', crop: { left: 0, top: 108, width: 2880, height: 1692 } },
-  roles: { file: 'desktop-settings-people', crop: { left: 1100, top: 130, width: 1540, height: 720 } },
+  // Stills from the release video (1920x1080 frames of the app with a caption below). The crops stay
+  // inside the window, away from its rounded corners, and leave out the caption.
+  answer: { stills: 'tagvico-3.5-02-chat-answer', crop: { left: 700, top: 118, width: 830, height: 310 } },
+  approval: { stills: 'tagvico-3.5-03-approval-card', crop: { left: 700, top: 118, width: 830, height: 490 } },
   'needs-you': { file: 'desktop-needs-you', crop: { left: 940, top: 0, width: 1520, height: 1180 } },
   person: { file: 'desktop-person-sandra', crop: { left: 940, top: 0, width: 1520, height: 620 } },
   models: { file: 'desktop-settings-ai', crop: { left: 1100, top: 140, width: 1540, height: 790 } },
@@ -76,7 +80,8 @@ async function writeVariants(name, input, size, crop, { widths = DEFAULT_WIDTHS,
 }
 
 const from = option('--from');
-for (const [name, { file, crop, ...options }] of Object.entries(SHOTS)) {
+const stillsDir = option('--stills');
+for (const [name, { file, stills, crop, ...options }] of Object.entries(SHOTS)) {
   if (flag('--placeholders')) {
     if (manifest[name] && !manifest[name].placeholder) continue;
     await writeVariants(name, Buffer.from(placeholderSvg(PLACEHOLDER_SIZE)), PLACEHOLDER_SIZE, null, options);
@@ -88,9 +93,11 @@ for (const [name, { file, crop, ...options }] of Object.entries(SHOTS)) {
     console.error('Pass --from <directory> or --placeholders.');
     process.exit(1);
   }
-  const source = ['png', 'jpg', 'jpeg', 'webp'].map((ext) => resolve(from, `${file}.${ext}`)).find(existsSync);
+  const directory = stills ? stillsDir : from;
+  const base = stills ?? file;
+  const source = directory && ['png', 'jpg', 'jpeg', 'webp'].map((ext) => resolve(directory, `${base}.${ext}`)).find(existsSync);
   if (!source) {
-    console.warn(`${name}: no source in ${from}, keeping the current asset`);
+    console.warn(`${name}: no source for ${base}, keeping the current asset`);
     continue;
   }
   const { width, height } = crop;

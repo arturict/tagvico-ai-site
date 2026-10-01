@@ -3,13 +3,19 @@ import { ArrowRight, ArrowUpRight, Check, Copy } from 'lucide-react';
 import shots from './shots.json';
 import { alts, links } from './content.js';
 
-/* __MASCOT_SRC__ is defined in vite.config.js; it is null until public/mascot/ holds an image. */
-const mascotSrc = typeof __MASCOT_SRC__ !== 'undefined' ? __MASCOT_SRC__ : null;
+const mascotFiles = {
+  waving: '/mascot/waving.svg',
+  idle: '/mascot/idle-animated.svg',
+  searching: '/mascot/searching-animated.svg',
+};
 
-/** The Tagvico mascot, drawn as pixel art, so it is scaled without smoothing. */
-export function Mascot({ className = '', size = 96 }) {
-  if (!mascotSrc) return null;
-  return <img className={`mascot ${className}`.trim()} src={mascotSrc} width={size} height={size} alt="" />;
+/**
+ * Tagi, the mascot: a 16 by 16 pixel drawing, so it is shown at whole multiples of 16 px and never
+ * smoothed. It is decorative; the headline next to it carries the meaning. The animated files blink
+ * or sweep slowly and stop under prefers-reduced-motion.
+ */
+export function Mascot({ pose, size = 96, className = '' }) {
+  return <img className={`mascot ${className}`.trim()} src={mascotFiles[pose]} width={size} height={size} alt="" />;
 }
 
 export function Arrow({ external = false }) {
@@ -31,7 +37,7 @@ export const track = (action, location, target) => ({
 export function Shot({ name, priority = false }) {
   const { width, height, placeholder } = shots[name];
   const phone = shots[`${name}-mobile`];
-  const sizes = '(min-width: 1180px) 1100px, 100vw';
+  const sizes = '(min-width: 900px) 600px, 100vw';
   return (
     <figure
       className="shot"
@@ -49,7 +55,6 @@ export function Shot({ name, priority = false }) {
           width={width}
           height={height}
           alt={alts[name]}
-          loading={priority ? 'eager' : 'lazy'}
           decoding="async"
           fetchPriority={priority ? 'high' : undefined}
         />

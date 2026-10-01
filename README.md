@@ -32,10 +32,11 @@ node scripts/make-og-card.mjs   # rebuilds public/og-card.png from the Needs you
 
 ## Optional assets
 
-- Release video: add `public/video/tagvico-3-5.mp4` and
-  `public/video/tagvico-3-5-poster.webp` and the video section appears.
-- Mascot: add `public/mascot/mascot.svg` (or `.png`, `.webp`) and it appears in the
-  hero, the closing call to action and on the 404 page.
+- Release video: `scripts/encode-video.sh <release.mp4> [poster.png]` (needs ffmpeg) writes
+  `public/video/tagvico-3-5.mp4` (1280x720, about 1.5 MB) and the poster. The section only
+  renders while the MP4 exists, loads nothing until played and is muted by default.
+- Mascot Tagi: pixel-art SVGs from the app in `public/mascot/`, shown at whole multiples of
+  16 px in the hero (waving), the closing call to action (idle) and on the 404 page (searching).
 
 ## Deployment
 

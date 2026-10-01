@@ -423,7 +423,30 @@ code {
 }
 
 .mascot-hero {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+}
+
+/* In the dark theme the pixel art needs a light ground, as the mascot guide asks. */
+html[data-theme="dark"] .mascot {
+  box-sizing: content-box;
+  padding: 8px;
+  border-radius: 16px;
+  background: #f7f7f8;
+}
+
+@media (min-width: 1100px) {
+  .hero > .wrap {
+    position: relative;
+  }
+
+  .mascot-hero {
+    position: absolute;
+    top: 8px;
+    right: var(--gutter);
+    width: 128px;
+    height: 128px;
+    margin: 0;
+  }
 }
 
 .closing-inner {
@@ -685,7 +708,7 @@ code {
   display: grid;
   gap: 20px;
   justify-items: start;
-  padding: 96px 0 0;
+  padding-top: 96px;
 }
 
 .not-found p {

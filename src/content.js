@@ -45,7 +45,8 @@ docker run -d \\
 
 export const alts = {
   chat: 'The Tagvico start page: a message box that says Ask about your documents, suggested questions and the most urgent open item',
-  roles: 'Tagvico household profiles: the owner, an adult and two members, with the note that adults and the owner approve changes',
+  answer: 'A Tagvico answer to the question when the CSS premium is due, with the two Paperless documents it used shown as source pills',
+  approval: 'A Tagvico proposal to decide on an insurance renewal, with Reject and Approve buttons and the note that nothing happens until an owner or adult approves',
   'needs-you': 'The Needs you list in Tagvico with overdue, this week and later items, each with a due date and a Done button',
   person: 'A household member page in Tagvico showing her role, that she can approve changes, and her two open items',
   models: 'Tagvico provider settings listing ChatGPT plan, OpenAI, OpenRouter, Ollama and an OpenAI-compatible endpoint',

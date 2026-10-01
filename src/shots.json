@@ -3,10 +3,6 @@
     "width": 1600,
     "height": 940
   },
-  "roles": {
-    "width": 1540,
-    "height": 720
-  },
   "needs-you": {
     "width": 1520,
     "height": 1180
@@ -34,5 +30,13 @@
   "needs-you-mobile": {
     "width": 780,
     "height": 1688
+  },
+  "answer": {
+    "width": 830,
+    "height": 310
+  },
+  "approval": {
+    "width": 830,
+    "height": 490
   }
 }

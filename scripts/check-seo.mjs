@@ -86,7 +86,7 @@ for (const section of home.matchAll(/<section\b[^>]*\bid="([^"]*)"/g)) {
 }
 if (/<video\b/.test(home)) {
   const video = home.match(/<video\b[^>]*>/)[0];
-  for (const attribute of ['controls', 'muted', 'playsinline']) assert(video.includes(attribute), `video needs ${attribute}`);
+  for (const attribute of ['controls', 'muted', 'playsinline']) assert(video.toLowerCase().includes(attribute), `video needs ${attribute}`);
   assert(!/\bautoplay\b/.test(video), 'video must not autoplay');
 }
 assert(!/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(home), 'the page must not use emoji');

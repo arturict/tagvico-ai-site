@@ -20,7 +20,7 @@ function NotFound() {
       <SiteHeader />
       <main id="main">
         <div className="wrap not-found">
-          <Mascot size={96} />
+          <Mascot pose="searching" size={96} />
           <h1 className="legal-title">This page does not exist.</h1>
           <p>The link may be old or mistyped.</p>
           <a className="button button-primary" href="/" {...track('home', 'not-found', 'top')}>Back to the start page</a>
