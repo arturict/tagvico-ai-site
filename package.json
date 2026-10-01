@@ -1,16 +1,15 @@
 {
   "name": "tagvico-ai-site",
-  "version": "3.2.6",
+  "version": "3.5.0",
   "private": false,
-  "description": "Landing page for Tagvico, the private action center and household companion for Paperless-ngx.",
+  "description": "Landing page for Tagvico, a self-hosted companion for Paperless-ngx.",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/sync-static-home.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "check:seo": "npm run build && node scripts/check-seo.mjs && node scripts/check-analytics.mjs",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
-    "@ridemountainpig/svgl-react": "^1.0.17",
     "@vitejs/plugin-react": "latest",
     "lucide-react": "latest",
     "react": "latest",
