@@ -11,12 +11,12 @@ OpenAI's Apps SDK UI (MIT, see the `LICENSE` in that folder); page rules are in
 ## Development
 
 ```bash
-npm ci
-npm run dev        # http://localhost:5173
-npm run check:seo  # build, then check metadata, structured data, sitemap, robots, analytics
+pnpm install --frozen-lockfile
+pnpm dev        # http://localhost:5173
+pnpm check:seo # build, then check metadata, structured data, sitemap, robots, analytics
 ```
 
-`npm run build` prerenders `/`, `/privacy`, `/terms` and a `404.html` into `dist/`.
+`pnpm build` prerenders `/`, `/privacy`, `/terms` and a `404.html` into `dist/`.
 
 ## Screenshots
 
@@ -25,7 +25,6 @@ crops them and writes AVIF, WebP and PNG files into `public/shots/` plus their s
 into `src/shots.json`:
 
 ```bash
-npm i --no-save sharp
 node scripts/optimize-shots.mjs --from /path/to/demo-shots
 node scripts/make-og-card.mjs   # rebuilds public/og-card.png from the Needs you shot
 ```

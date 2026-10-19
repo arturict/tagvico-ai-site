@@ -6,14 +6,18 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
-    "check:seo": "npm run build && node scripts/check-seo.mjs && node scripts/check-analytics.mjs",
+    "check:seo": "pnpm build && node scripts/check-seo.mjs && node scripts/check-analytics.mjs",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "lucide-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "@vitejs/plugin-react": "^6.0.2",
+    "lucide-react": "^1.17.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "vite": "^8.1.4"
+  },
+  "packageManager": "pnpm@10.34.7",
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }
