@@ -8,7 +8,7 @@
 // which are 2x screenshots of a 1440x900 window) and writes
 // public/shots/<name>-800.{avif,webp}, <name>-1600.{avif,webp} and a 1600px PNG
 // fallback, then records the pixel size in src/shots.json so the page can set
-// width and height and avoid layout shift. Needs sharp: npm i --no-save sharp
+// width and height and avoid layout shift. Needs the sharp devDependency (pnpm install)
 import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -42,7 +42,7 @@ let sharp;
 try {
   ({ default: sharp } = await import('sharp'));
 } catch {
-  console.error('sharp is not installed. Run: npm i --no-save sharp');
+  console.error('sharp is not installed. Run: pnpm install');
   process.exit(1);
 }
 

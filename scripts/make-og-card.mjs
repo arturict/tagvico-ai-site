@@ -1,5 +1,5 @@
 // Renders public/og-card.png (1200x630) from the icon, the headline and the
-// Needs you screenshot. Needs sharp: npm i --no-save sharp
+// Needs you screenshot. Needs the sharp devDependency (pnpm install)
 import { resolve } from 'node:path';
 import sharp from 'sharp';
 
