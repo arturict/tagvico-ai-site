@@ -99,6 +99,7 @@ function PrivacyContent() {
           views, scroll depth and standard campaign labels. Tracking stays off when Global Privacy Control or Do Not Track
           is enabled. It does not use cookies, local storage, persistent visitor identifiers or fingerprinting, and it
           does not collect arbitrary query parameters or free-form input. This page and the terms page are not tracked.
+          The website is served by Cloudflare, which processes your IP address to deliver it.
         </p>
       </section>
     </>

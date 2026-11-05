@@ -1,0 +1,12 @@
+{
+  // tagvico.arturf.ch, moved from VM 124 biz on 2026-11-05 (second-brain: Tagvico, Decision - Move Static Sites and DNS to Cloudflare)
+  "name": "tagvico-site",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  // Routes on proxied CNAMEs to home.artur.casa: removing a route sends the host back to the biz origin (rollback).
+  "routes": [{ "pattern": "tagvico.arturf.ch/*", "zone_name": "arturf.ch" }],
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true, "html_handling": "none", "not_found_handling": "none" },
+  "observability": { "enabled": true }
+}
